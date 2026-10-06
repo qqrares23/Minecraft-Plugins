@@ -156,7 +156,7 @@ enchant:
   ricochet: "Arrows bounce to another nearby enemy after a hit."
   harpoon: "Arrows pull what they hit towards you."
   scatter_shot: "Arrows burst into shrapnel on impact, hurting everything around."
-  auto_smelt: "Mined blocks drop already smelted: ingots instead of raw ore, stone, glass..."
+  auto_smelt: "Ores drop already smelted: ingots instead of raw iron, gold and copper, netherite scrap from ancient debris."
   magnet: "What you mine goes straight into your inventory."
   excavator: "Mine 3x3 at once with pickaxes and shovels (sneak to mine a single block)."
   treasure_hunter: "Chance for a catch to be treasure: enchanted books, saddles, enchanted bows and rods..."

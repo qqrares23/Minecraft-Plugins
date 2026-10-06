@@ -156,7 +156,7 @@ enchant:
   ricochet: "Săgețile sar la alt inamic apropiat după ce lovesc."
   harpoon: "Săgețile trag spre tine ce lovesc."
   scatter_shot: "Săgețile se sparg în schije la impact, rănind tot ce e în jur."
-  auto_smelt: "Blocurile minate cad gata topite: lingouri în loc de minereu brut, piatră, sticlă..."
+  auto_smelt: "Minereurile cad gata topite: lingouri în loc de fier, aur și cupru brut, resturi de netherite din ancient debris."
   magnet: "Ce minezi ajunge direct în inventar."
   excavator: "Minezi 3x3 dintr-odată cu târnăcoape și lopeți (furișat ca să minezi un singur bloc)."
   treasure_hunter: "Șansă ca o captură să fie o comoară: cărți vrăjite, șei, arcuri și undițe vrăjite..."

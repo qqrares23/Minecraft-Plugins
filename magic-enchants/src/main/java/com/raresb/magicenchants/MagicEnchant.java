@@ -74,8 +74,8 @@ public enum MagicEnchant {
             "Săgețile se sparg în schije la impact, rănind tot ce e în jur."),
 
     // --- Tools ---
-    AUTO_SMELT("Auto-Smelt", 0xFF7F50, Target.MINING, Category.TOOLS, 1, 2, 15, 0, 50, 4,
-            "Blocurile minate cad gata topite: lingouri în loc de minereu brut, piatră, sticlă..."),
+    AUTO_SMELT("Auto-Smelt", 0xFF7F50, Target.PICKAXE, Category.TOOLS, 1, 2, 15, 0, 50, 4,
+            "Minereurile cad gata topite: lingouri în loc de fier, aur și cupru brut, resturi de netherite din ancient debris."),
     MAGNET("Magnet", 0xC0392B, Target.MINING, Category.TOOLS, 1, 5, 5, 0, 40, 2,
             "Ce minezi ajunge direct în inventar."),
     EXCAVATOR("Excavator", 0x8D6E63, Target.DIGGER, Category.TOOLS, 1, 1, 20, 0, 55, 8,

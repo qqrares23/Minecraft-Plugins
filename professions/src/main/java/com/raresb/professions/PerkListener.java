@@ -762,6 +762,9 @@ final class PerkListener implements Listener {
         if (!event.getBlockState().getType().name().endsWith("_ORE") || !has(event.getPlayer(), Perk.SMELTERS_TOUCH)) {
             return;
         }
+        // On an Auto-Smelt pickaxe (MagicEnchants) every raw drop becomes an ingot anyway, so there the perk
+        // adds one more of it instead - Auto-Smelt then smelts that one too (Professions 1.8.1).
+        boolean autoSmelt = plugin.magicLevel(event.getPlayer().getInventory().getItemInMainHand(), "auto_smelt") > 0;
         for (Item drop : event.getItems()) {
             ItemStack stack = drop.getItemStack();
             Material ingot = switch (stack.getType()) {
@@ -771,7 +774,7 @@ final class PerkListener implements Listener {
                 default -> null;
             };
             if (ingot != null && roll(0.08)) {
-                drop.setItemStack(stack.withType(ingot));
+                drop.setItemStack(autoSmelt ? stack.add(1) : stack.withType(ingot));
                 drop.getWorld().spawnParticle(Particle.FLAME, drop.getLocation(), 6, 0.2, 0.2, 0.2, 0.01);
             }
         }

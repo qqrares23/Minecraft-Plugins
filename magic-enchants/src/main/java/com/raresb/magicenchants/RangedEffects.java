@@ -43,6 +43,12 @@ final class RangedEffects implements Listener {
     /** Overcharge: when each player last loaded a crossbow. */
     private final Map<UUID, Long> loadedAt = new HashMap<>();
     private final NamespacedKey overchargeKey;
+    /** Set once a projectile's Explosive Tips / Scatter Shot burst has gone off (Piercing bolts hit several mobs). */
+    private final NamespacedKey burstKey;
+    /** Paths' tag on arrows (which weapon shot them), copied onto Barrage's extra arrows so they count for Ranger. */
+    private static final NamespacedKey PATHS_WEAPON = new NamespacedKey("paths", "weapon");
+    /** Area/pull effects a Ricochet bounce does not take along (each bounce would explode or pull again). */
+    private static final MagicEnchant[] NOT_BOUNCED = {MagicEnchant.EXPLOSIVE_TIPS, MagicEnchant.SCATTER_SHOT, MagicEnchant.HARPOON};
 
     RangedEffects(MagicEnchantsPlugin plugin) {
         this.plugin = plugin;
@@ -50,6 +56,7 @@ final class RangedEffects implements Listener {
             keys.put(enchant, new NamespacedKey(plugin, "arrow_" + enchant.name().toLowerCase(java.util.Locale.ROOT)));
         }
         this.overchargeKey = new NamespacedKey(plugin, "arrow_overcharge");
+        this.burstKey = new NamespacedKey(plugin, "arrow_burst_done");
     }
 
     private int carried(Projectile projectile, MagicEnchant enchant) {
@@ -141,6 +148,12 @@ final class RangedEffects implements Listener {
                     extra.setDamage(original.getDamage());
                     extra.setCritical(original.isCritical());
                     extra.setFireTicks(original.getFireTicks());
+                    // The bow itself, so Power, Punch and other bow enchantments count for the extra arrows too.
+                    extra.setWeapon(bow);
+                    String pathsWeapon = original.getPersistentDataContainer().get(PATHS_WEAPON, PersistentDataType.STRING);
+                    if (pathsWeapon != null) {
+                        extra.getPersistentDataContainer().set(PATHS_WEAPON, PersistentDataType.STRING, pathsWeapon);
+                    }
                     copyLevels(projectile, extra);
                     if (carried(extra, MagicEnchant.HOMING) > 0) {
                         home(player, extra, carried(extra, MagicEnchant.HOMING));
@@ -234,7 +247,13 @@ final class RangedEffects implements Listener {
             ricochet(shooter, arrow, target, ricochet);
         }
 
-        int explosive = carried(projectile, MagicEnchant.EXPLOSIVE_TIPS);
+        // One burst per projectile: a Piercing bolt passing through several mobs explodes only at the first.
+        boolean burstDone = projectile.getPersistentDataContainer().has(burstKey);
+        int explosive = burstDone ? 0 : carried(projectile, MagicEnchant.EXPLOSIVE_TIPS);
+        int scatter = burstDone ? 0 : carried(projectile, MagicEnchant.SCATTER_SHOT);
+        if (explosive > 0 || scatter > 0) {
+            projectile.getPersistentDataContainer().set(burstKey, PersistentDataType.BYTE, (byte) 1);
+        }
         if (explosive > 0) {
             world.spawnParticle(Particle.EXPLOSION, at, 1);
             world.spawnParticle(Particle.FLAME, at, 15, 0.6, 0.4, 0.6, 0.05);
@@ -253,7 +272,6 @@ final class RangedEffects implements Listener {
             }
         }
 
-        int scatter = carried(projectile, MagicEnchant.SCATTER_SHOT);
         if (scatter > 0) {
             world.spawnParticle(Particle.CRIT, at, 30 + 10 * scatter, 1.2, 0.5, 1.2, 0.4);
             world.spawnParticle(Particle.SMALL_GUST, at, 3, 0.5, 0.3, 0.5, 0);
@@ -284,6 +302,9 @@ final class RangedEffects implements Listener {
             bounce.setDamage(damage);
             bounce.setPickupStatus(AbstractArrow.PickupStatus.DISALLOWED);
             copyLevels(from, bounce);
+            for (MagicEnchant effect : NOT_BOUNCED) {
+                bounce.getPersistentDataContainer().remove(keys.get(effect));
+            }
             bounce.getPersistentDataContainer().set(keys.get(MagicEnchant.RICOCHET), PersistentDataType.INTEGER, bouncesLeft - 1);
             if (bouncesLeft - 1 <= 0) {
                 bounce.getPersistentDataContainer().remove(keys.get(MagicEnchant.RICOCHET));

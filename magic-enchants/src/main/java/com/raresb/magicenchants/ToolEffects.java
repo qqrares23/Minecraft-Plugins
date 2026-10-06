@@ -37,6 +37,9 @@ final class ToolEffects implements Listener {
     private final MagicEnchantsPlugin plugin;
     /** Smelting results by input item, looked up from the furnace recipes. */
     private final Map<Material, Optional<ItemStack>> smelted = new HashMap<>();
+    /** What Auto-Smelt smelts: ore drops only (1.9.2) - not logs, sand, stone or crops. */
+    private static final java.util.Set<Material> SMELTABLE = java.util.EnumSet.of(
+            Material.RAW_IRON, Material.RAW_GOLD, Material.RAW_COPPER, Material.ANCIENT_DEBRIS);
     /** Set while Excavator breaks the extra blocks, so they don't start their own 3x3. */
     private boolean excavating;
 
@@ -180,7 +183,7 @@ final class ToolEffects implements Listener {
         while (items.hasNext()) {
             Item item = items.next();
             ItemStack stack = item.getItemStack();
-            if (smelt) {
+            if (smelt && SMELTABLE.contains(stack.getType())) {
                 Optional<ItemStack> result = smeltResult(stack);
                 if (result.isPresent()) {
                     ItemStack output = result.get().clone();
@@ -202,7 +205,8 @@ final class ToolEffects implements Listener {
         if (smeltedAny) {
             Block block = event.getBlock();
             block.getWorld().spawnParticle(Particle.FLAME, block.getLocation().add(0.5, 0.5, 0.5), 8, 0.3, 0.3, 0.3, 0.02);
-            player.giveExp(1);
+            // true = Mending gets it first, like an XP orb (plain giveExp skips Mending).
+            player.giveExp(1, true);
         }
         if (magnet) {
             player.playSound(player.getLocation(), Sound.ENTITY_ITEM_PICKUP, 0.3f, 1.4f);
@@ -225,6 +229,11 @@ final class ToolEffects implements Listener {
         }
         Block origin = event.getBlock();
         RayTraceResult aim = player.rayTraceBlocks(6);
+        // Only the block the player is mining themselves: blocks broken for them by skills (Tunnel Bore, Shatter,
+        // Burrow...), VeinMiner or Timberella also fire BlockBreakEvent and must not each start a 3x3 (1.9.2).
+        if (aim == null || !origin.equals(aim.getHitBlock())) {
+            return;
+        }
         BlockFace face = aim != null && aim.getHitBlockFace() != null ? aim.getHitBlockFace() : BlockFace.UP;
         float originHardness = origin.getType().getHardness();
 

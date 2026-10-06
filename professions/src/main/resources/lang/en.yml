@@ -168,7 +168,7 @@ perk:
   sifter: "3% chance for mined stone to drop an iron or gold nugget."
   rush: "Haste bursts from ores come twice as often."
   ore_sense: "When you mine an ore, ores of the same kind within 4 blocks glow for 5 seconds (only for you)."
-  smelters_touch: "8% chance for raw iron, gold or copper to drop as an ingot."
+  smelters_touch: "8% chance for raw iron, gold or copper to drop as an ingot (with Auto-Smelt: one extra ingot)."
   gem_cutter: "Diamonds and emeralds get a 10% higher chance to double."
   master_miner: "Finds from mining appear 30% more often."
   dwarven_endurance: "Mining no longer makes you hungry."

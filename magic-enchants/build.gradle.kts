@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "com.raresb"
-version = "1.9.1"
+version = "1.9.2"
 
 repositories {
     mavenCentral()

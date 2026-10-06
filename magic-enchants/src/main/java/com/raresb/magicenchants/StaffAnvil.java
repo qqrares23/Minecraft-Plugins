@@ -1,6 +1,7 @@
 package com.raresb.magicenchants;
 
 import java.util.Map;
+import java.util.WeakHashMap;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.EventHandler;
@@ -18,9 +19,14 @@ import org.bukkit.inventory.view.AnvilView;
  * (to the max), otherwise the higher level wins; cost = each enchantment's anvil cost × level +
  * both prior-work penalties (+1 for a rename), and the result's prior-work penalty doubles.
  * Runs at LOW so Professions' anvil perks (discounts, Master Smith cap) still apply on top.
+ *
+ * <p>Paper fires the event on vanilla's "these can't be combined" path and then sets the cost to -1, which
+ * makes the result impossible to take. So the final cost (after every listener) is put back a tick later.
  */
 final class StaffAnvil implements Listener {
     private final MagicEnchantsPlugin plugin;
+    /** Anvil views currently showing a staff merge from this class. */
+    private final Map<AnvilView, Boolean> merging = new WeakHashMap<>();
 
     StaffAnvil(MagicEnchantsPlugin plugin) {
         this.plugin = plugin;
@@ -28,6 +34,7 @@ final class StaffAnvil implements Listener {
 
     @EventHandler(priority = EventPriority.LOW)
     public void onPrepare(PrepareAnvilEvent event) {
+        merging.remove(event.getView());
         ItemStack left = event.getInventory().getFirstItem();
         ItemStack right = event.getInventory().getSecondItem();
         if (left == null || right == null || left.getType() != right.getType()
@@ -67,6 +74,24 @@ final class StaffAnvil implements Listener {
         result.editMeta(Repairable.class, meta -> meta.setRepairCost(penalty));
         event.setResult(result);
         view.setRepairCost(Math.max(1, cost));
+        merging.put(view, Boolean.TRUE);
+    }
+
+    /** Puts the final cost back after Paper resets it to -1 (see the class comment). */
+    @EventHandler(priority = EventPriority.MONITOR)
+    public void afterPrepare(PrepareAnvilEvent event) {
+        AnvilView view = event.getView();
+        ItemStack result = event.getResult();
+        if (merging.get(view) == null || result == null || result.isEmpty()) {
+            return;
+        }
+        int cost = view.getRepairCost();
+        plugin.getServer().getScheduler().runTask(plugin, () -> {
+            if (merging.get(view) != null && view.getPlayer().getOpenInventory() == view
+                    && result.equals(view.getTopInventory().getItem(2))) {
+                view.setRepairCost(cost);
+            }
+        });
     }
 
     private static int priorWork(ItemStack item) {

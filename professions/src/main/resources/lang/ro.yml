@@ -169,7 +169,7 @@ perk:
   sifter: "3% șansă ca piatra minată să dea o pepită de fier sau de aur."
   rush: "Impulsurile de Grabă de la minereuri vin de două ori mai des."
   ore_sense: "Când minezi un minereu, minereurile de același fel din 4 blocuri strălucesc 5 secunde (doar pentru tine)."
-  smelters_touch: "8% șansă ca fierul, aurul sau cuprul brut să cadă direct ca lingou."
+  smelters_touch: "8% șansă ca fierul, aurul sau cuprul brut să cadă direct ca lingou (cu Auto-Smelt: un lingou în plus)."
   gem_cutter: "Diamantele și smaraldele au cu 10% mai multă șansă de dublu."
   master_miner: "Descoperirile din minat apar cu 30% mai des."
   dwarven_endurance: "Minatul nu te mai face să flămânzești."

@@ -132,7 +132,7 @@ final class Combo implements Listener {
 
     private void finisher(Player attacker, LivingEntity target) {
         attacker.getPersistentDataContainer().set(finishersKey, PersistentDataType.INTEGER, finishers(attacker) + 1);
-        attacker.giveExp(plugin.getConfig().getInt("combo.finisher-xp", 10));
+        attacker.giveExp(plugin.getConfig().getInt("combo.finisher-xp", 10), true); // true = Mending first, like an XP orb
         target.getWorld().spawnParticle(Particle.CRIT, target.getLocation().add(0, target.getHeight() / 2, 0), 40, 0.4, 0.5, 0.4, 0.4);
         target.getWorld().spawnParticle(Particle.FLASH, target.getLocation().add(0, target.getHeight() / 2, 0), 1, 0, 0, 0, 0,
                 org.bukkit.Color.fromRGB(0xFFD24A));

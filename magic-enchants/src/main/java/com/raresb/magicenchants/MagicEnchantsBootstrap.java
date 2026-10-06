@@ -7,6 +7,7 @@ import io.papermc.paper.registry.RegistryKey;
 import io.papermc.paper.registry.data.EnchantmentRegistryEntry.EnchantmentCost;
 import io.papermc.paper.registry.event.RegistryComposeEvent;
 import io.papermc.paper.registry.event.RegistryEvents;
+import io.papermc.paper.registry.keys.EnchantmentKeys;
 import io.papermc.paper.registry.keys.ItemTypeKeys;
 import io.papermc.paper.registry.keys.tags.EnchantmentTagKeys;
 import io.papermc.paper.registry.keys.tags.ItemTypeTagKeys;
@@ -50,7 +51,11 @@ public final class MagicEnchantsBootstrap implements PluginBootstrap {
                             .maximumCost(EnchantmentCost.of(enchant.maxCostBase(), enchant.costPerLevel()))
                             .anvilCost(enchant.anvilCost())
                             .activeSlots(slots(enchant.target()));
-                    // No exclusive sets: every enchantment stacks with every other (1.8.0).
+                    // No exclusive sets: every enchantment stacks with every other (1.8.0) - except Soulbound and
+                    // Curse of Vanishing: Paper deletes vanishing items before Soulbound could keep them (1.9.2).
+                    if (enchant == MagicEnchant.SOULBOUND) {
+                        builder.exclusiveWith(RegistrySet.keySet(RegistryKey.ENCHANTMENT, EnchantmentKeys.VANISHING_CURSE));
+                    }
                 });
             }
         }));

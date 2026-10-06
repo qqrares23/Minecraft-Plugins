@@ -30,6 +30,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
@@ -82,8 +83,9 @@ final class WeaponEffects implements Listener {
             return;
         }
         if (plugin.isDealingBonusDamage() || !(event.getDamager() instanceof Player player)
-                || !(event.getEntity() instanceof LivingEntity target)) {
-            return;
+                || !(event.getEntity() instanceof LivingEntity target)
+                || event.getCause() == EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK) {
+            return; // a sword's sweep hits are side damage: no enchantment rolls/splashes on each swept mob (1.9.2)
         }
         ItemStack weapon = player.getInventory().getItemInMainHand();
         boolean charged = player.getAttackCooldown() >= MIN_CHARGE;
@@ -140,8 +142,9 @@ final class WeaponEffects implements Listener {
             return;
         }
         if (plugin.isDealingBonusDamage() || !(event.getDamager() instanceof Player player)
-                || !(event.getEntity() instanceof LivingEntity target)) {
-            return;
+                || !(event.getEntity() instanceof LivingEntity target)
+                || event.getCause() == EntityDamageEvent.DamageCause.ENTITY_SWEEP_ATTACK) {
+            return; // a sword's sweep hits are side damage: no enchantment rolls/splashes on each swept mob (1.9.2)
         }
         ItemStack weapon = player.getInventory().getItemInMainHand();
         boolean charged = player.getAttackCooldown() >= MIN_CHARGE;
