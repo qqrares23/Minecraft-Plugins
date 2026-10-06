@@ -1,0 +1,193 @@
+# WeaponSkills - press the swap-hands key (F) with a weapon or tool to use a skill.
+# In-game: /skills admin config set <key> <value>, /skills admin toggle <feature>, /skills admin reload.
+
+# Language of player messages: en, ro, or any lang/<code>.yml you add. Change live: /skills admin lang <code>
+language: en
+
+# Worlds where skills and the dodge roll work.
+# mode: blacklist = every world except the list; whitelist = only the listed worlds.
+worlds:
+  mode: blacklist
+  list: []
+# What you are doing when you press it picks the skill:
+#   standing / mid-air / sprinting / sneaking, or blocking with a shield for Shield Bash.
+
+# Hit passive mobs (cows, villagers...) with area skills. Hostile mobs, players (if PvP
+# is on) and anything attacking you are always hit. Your own pets are never hit.
+hit-passive-mobs: true
+
+# Durability each skill use costs, and the chance it costs anything at all
+# (1 and 0.5 = on average half a point of durability per use). Unbreaking still applies.
+durability-cost: 1
+durability-chance: 0.5
+
+# Dodge roll: double-tap sneak while holding a combat weapon (not a pickaxe) or a shield.
+dodge:
+  enabled: true
+  cooldown: 3              # seconds
+  speed: 1.0               # how far the roll carries you
+  untouchable-ticks: 10    # invulnerability frames: nothing hurts you for this long (20 ticks = 1 second)
+  double-tap-millis: 300   # the two sneak presses must be this close together
+
+# Sword and axe mastery makes normal attacks faster (a shorter cooldown between full hits).
+attack-speed:
+  per-mastery: 0.002       # +0.2% attack speed per mastery point...
+  max-bonus: 0.30          # ...up to +30% (reached at 150 mastery)
+
+# Per-skill settings: cooldown in seconds, damage as described per weapon.
+# Higher skill levels add damage and shorten cooldowns (see progression below).
+skills:
+  # Sword (damage x weapon attack damage)
+  whirlwind: { cooldown: 8, damage: 1.0 }
+  ground_slam: { cooldown: 12, damage: 1.2 }
+  dash_strike: { cooldown: 8, damage: 1.0 }
+  parry: { cooldown: 10, damage: 1.5 }
+  rising_slash: { cooldown: 9, damage: 0.9 }
+  blade_flurry: { cooldown: 10, damage: 0.45 }
+  shadow_step: { cooldown: 12, damage: 1.2 }
+  blade_dance: { cooldown: 25 }
+  mirror_image: { cooldown: 30 }
+  judgment: { cooldown: 90, damage: 1.5 }
+  # Axe (damage x weapon attack damage)
+  cleave: { cooldown: 8, damage: 1.3 }
+  executioners_drop: { cooldown: 14, damage: 2.0 }
+  berserker_charge: { cooldown: 16, damage: 0.8 }
+  axe_throw: { cooldown: 8, damage: 1.6 }
+  war_cry: { cooldown: 25 }
+  earthsplitter: { cooldown: 12, damage: 1.1 }
+  bloodlust: { cooldown: 25 }
+  ground_pound: { cooldown: 14, damage: 0.6 }
+  chain_hook: { cooldown: 10, damage: 0.6 }
+  ragnarok: { cooldown: 120 }
+  # Shield (damage is a flat number)
+  shield_bash: { cooldown: 6, damage: 4 }
+  fortify: { cooldown: 20 }
+  reflect: { cooldown: 15 }
+  guardian_aura: { cooldown: 30 }
+  taunt: { cooldown: 15 }
+  # Bow (damage is a flat number)
+  arrow_rain: { cooldown: 14, damage: 3 }
+  piercing_shot: { cooldown: 8, damage: 9 }
+  volley: { cooldown: 8, damage: 5 }
+  wind_arrow: { cooldown: 10, damage: 4.0 }
+  hover_shot: { cooldown: 12, damage: 5 }
+  # Crossbow (damage is a flat number)
+  explosive_bolt: { cooldown: 10, damage: 8 }
+  net_shot: { cooldown: 14, damage: 2 }
+  harpoon_bolt: { cooldown: 10, damage: 5 }
+  burst_fire: { cooldown: 9, damage: 5 }
+  recoil_shot: { cooldown: 10, damage: 7 }
+  # Trident (damage x weapon attack damage)
+  riptide_surge: { cooldown: 8, damage: 1.0 }
+  tidal_wave: { cooldown: 14, damage: 0.8 }
+  lightning_call: { cooldown: 16, damage: 1.4 }
+  # Mace (damage x weapon attack damage)
+  gravity_well: { cooldown: 16, damage: 0.5 }
+  tremor: { cooldown: 12, damage: 0.7 }
+  meteor: { cooldown: 18, damage: 1.5 }
+  # Pickaxe
+  tremor_sense: { cooldown: 30 }
+  tunnel_bore: { cooldown: 20 }
+  miners_rush: { cooldown: 45 }
+  shatter: { cooldown: 25 }
+  # Woodcutting (an axe, while looking at a log or leaves)
+  clear_cut: { cooldown: 45 }
+  grove_growth: { cooldown: 40 }
+  lumber_frenzy: { cooldown: 60 }
+  # Unlocked with more mastery (1.9.0). Sword/axe/trident/mace: x weapon damage; bow/crossbow/shield: flat.
+  crescent_wave: { cooldown: 10, damage: 1.1 }
+  counter_stance: { cooldown: 16, damage: 1.2 }
+  thousand_cuts: { cooldown: 18, damage: 0.3 }
+  tomahawk_rain: { cooldown: 18, damage: 0.8 }
+  lumberjacks_fury: { cooldown: 22, damage: 0.5 }
+  bone_breaker: { cooldown: 14, damage: 1.2 }
+  shield_throw: { cooldown: 12, damage: 5.0 }
+  phalanx: { cooldown: 30 }
+  rain_of_fire: { cooldown: 18, damage: 3.0 }
+  trap_arrow: { cooldown: 14, damage: 3.0 }
+  split_shot: { cooldown: 10, damage: 4.0 }
+  sniper_mode: { cooldown: 16, damage: 14.0 }
+  storm_of_arrows: { cooldown: 90, damage: 4.0 }
+  gatling: { cooldown: 18, damage: 3.0 }
+  smoke_bolt: { cooldown: 16 }
+  chain_bolt: { cooldown: 14, damage: 5.0 }
+  artillery_barrage: { cooldown: 100, damage: 6.0 }
+  poseidons_call: { cooldown: 16, damage: 0.8 }
+  harpoon_throw: { cooldown: 10, damage: 1.3 }
+  tsunami: { cooldown: 100, damage: 1.0 }
+  wind_burst: { cooldown: 10, damage: 0.5 }
+  anvil_drop: { cooldown: 14, damage: 1.6 }
+  cataclysm: { cooldown: 120, damage: 1.4 }
+  # Spear (1.10.0): x weapon damage
+  impale: { cooldown: 8, damage: 1.2 }
+  dragoon_dive: { cooldown: 12, damage: 1.4 }
+  lance_charge: { cooldown: 10, damage: 1.4 }
+  javelin: { cooldown: 9, damage: 1.5 }
+  pole_vault: { cooldown: 10 }
+  sweeping_arc: { cooldown: 9, damage: 0.9 }
+  spear_wall: { cooldown: 18, damage: 0.6 }
+  thrust_flurry: { cooldown: 14, damage: 0.35 }
+  pinning_throw: { cooldown: 14, damage: 1.0 }
+  dragon_leap: { cooldown: 16, damage: 1.6 }
+  gungnir: { cooldown: 100, damage: 3.0 }
+  # Tools
+  harvest_wave: { cooldown: 20 }
+  burrow: { cooldown: 30 }
+  grapple_hook: { cooldown: 8 }
+
+# Skills level up as you use them (per player, per skill).
+progression:
+  max-level: 50
+  # Cooldown reduction and effect length stop growing at this level (damage keeps growing to max-level).
+  bonus-cap-level: 20
+  xp-per-use: 5
+  xp-per-hit: 1                   # per enemy hit...
+  max-hit-xp-per-use: 5           # ...up to this much per use
+  xp-per-level: 15                # level N -> N+1 needs 15 x N XP
+  # Skill damage multiplier by skill level: from damage-at-level-1 up to damage-at-max-level, slowly at
+  # first and faster near the top (damage-curve: 1 = straight line, higher = more back-loaded).
+  # Defaults: x0.60 at 1, x0.71 at 10, x0.93 at 20, x1.21 at 30, x1.59 at 40, x1.95 at 50.
+  damage-at-level-1: 0.6
+  damage-at-max-level: 1.95
+  damage-curve: 1.5
+  cooldown-reduction-per-level: 0.015  # -1.5% cooldown per level above 1
+  evolve-level: 10                # skills gain a new effect (evolve) at this level
+
+# Cross-weapon combos: a skill hit marks the target; another weapon's skill hit triggers a combo.
+combos:
+  enabled: true
+
+# Augments: at skill levels 30, 40 and 50 players pick one of two augments per skill.
+augments:
+  enabled: true
+
+# Each weapon's skills on/off. A weapon can also be limited with the permission
+# weaponskills.weapon.<id>, and a single skill with weaponskills.skill.<id> or skills.<id>.enabled
+# (add "enabled: false" to that skill's entry above). Everyone has the permissions by default.
+weapons:
+  sword:
+    enabled: true
+  axe:
+    enabled: true
+  shield:
+    enabled: true
+  bow:
+    enabled: true
+  crossbow:
+    enabled: true
+  trident:
+    enabled: true
+  mace:
+    enabled: true
+  spear:
+    enabled: true
+  pickaxe:
+    enabled: true
+  woodcutting:
+    enabled: true
+  hoe:
+    enabled: true
+  shovel:
+    enabled: true
+  fishing_rod:
+    enabled: true

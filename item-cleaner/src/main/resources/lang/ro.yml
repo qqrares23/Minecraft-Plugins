@@ -1,0 +1,17 @@
+# Mesajele ItemCleaner (format MiniMessage: https://docs.advntr.dev/minimessage/format.html).
+# Romanian counting: one = 1, few = 0 and 2-19, other = 20+ ("20 de obiecte").
+warning: "<gold>⚠ Obiectele de pe jos se șterg în <time>."
+cleared: "<green>✔ Am șters <count> de pe jos."
+unit:
+  item:
+    one: "un obiect"
+    few: "<n> obiecte"
+    other: "<n> de obiecte"
+  minute:
+    one: "un minut"
+    few: "<n> minute"
+    other: "<n> de minute"
+  second:
+    one: "o secundă"
+    few: "<n> secunde"
+    other: "<n> de secunde"

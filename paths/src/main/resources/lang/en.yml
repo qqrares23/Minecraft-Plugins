@@ -1,0 +1,514 @@
+# Paths messages (MiniMessage format: https://docs.advntr.dev/minimessage/format.html).
+# Descriptions and upgrades are plain text. Upgrade lines must start with "Lvl <level>:".
+no-permission: "<red>You don't have permission."
+chat-title: "<dark_gray>[<title><dark_gray>] "
+skill-used: "<white>✦ <skill>!"
+skill-ready: "<green><skill> - ready"
+unyielding: "<gold>✦ Unyielding! (again in 3 minutes)"
+camouflaged: "<dark_green>✦ Camouflaged"
+wild-wolf: "<gold>Wild Wolf"
+no-pets: "<gray>You have no tamed animals nearby."
+retaliation: "<#2e86c1>Retaliation x<stacks>"
+chose-ability: "<white><slot>: <ability>"
+chose-talent: "<light_purple>Talent: <talent>"
+talent-locked: "<red>The talent unlocks at level <level>."
+in-combat: "<red>You can't change during combat (wait <seconds> seconds)."
+drop-cooldown: "<red>You can drop a path again in <time>."
+dropped: "<gray>You dropped the <path> path. (Its progress is kept.)"
+too-many: "<red>You already have <max> paths. Drop one first."
+weapon-clash: "<red><other> already uses the same weapon as <path>. Pick a path with another weapon."
+picked: "<gray>You picked the <path><gray> path."
+level-up:
+  subtitle: "<yellow>path level <level>"
+  subtitle-max: "<yellow>path level <level> (mastered!)"
+  chat: "<gold>⬆ <path><gray> is now level <level>."
+  upgrade: "<light_purple>  ✦ <ability>: <upgrade>"
+  new-talent: "<light_purple>  ✦ New talent to choose: type /paths and open <path>."
+unit:
+  minute:
+    one: "1 minute"
+    other: "<n> minutes"
+  talent:
+    one: "1 talent to choose"
+    other: "<n> talents to choose"
+menu:
+  title: "<dark_red><bold>⚔ Paths - pick <max>"
+  back: "<yellow>← Back"
+  info:
+    name: "<gold>Your paths"
+    active: "<yellow>Active: <paths> (<count>/<max>)"
+    none: "none"
+    lore:
+      - "<gray>Click a path to see it, pick it"
+      - "<gray>and choose its abilities and talents."
+      - "<dark_gray>Two active paths can't use the same weapon."
+      - "<dark_gray>Progress is kept for every path."
+    cooldown: "<red>You can drop a path again in <time>."
+    can-switch: "<green>You can change paths now."
+  active: "<green><bold>✔ ACTIVE"
+  inactive: "<dark_gray>Inactive"
+  level: "<yellow>Level: <level> / <max>"
+  max-level: "<gold>Max level!"
+  slot-line: "<gold><slot>: <white><ability>"
+  open-talents: "<light_purple>✦ <count>"
+  m2: "<dark_gray>M2: <trigger>"
+  m2-header: "<aqua>M2: <trigger>"
+  click-open: "<green>Click to open"
+  veteran: "<dark_gray>Veteran (level over 20): +<bonus>% damage (+0.5% per level)"
+  veteran-on: "<dark_gray>Veteran (level over 20): <green>+<bonus>% damage<dark_gray> (+0.5% per level)"
+  bolt-fire: "<aqua>Left-click with the staff: a fire bolt."
+  bolt-ice: "<aqua>Left-click with the staff: an ice bolt."
+  spell-header: "<aqua>Sneak + right-click with the staff: your spell."
+  xp-from: "<dark_gray>XP from <source> (only while active)."
+  drop:
+    name: "<red>Drop <path>"
+    kept: "<gray>Progress is kept."
+    cooldown: "<red>You can drop it in <time>."
+    pause: "<dark_gray>After dropping: a <time> pause."
+  pick:
+    name: "<green>Pick <path>"
+    count: "<gray>You have <count>/<max> paths active."
+  slot-name: "<gold><bold><slot>"
+  slot-lore:
+    - "<gray>Pick one →"
+  spell-lore:
+    - "<gray>Sneak + right-click with the staff."
+    - "<gray>Pick one →"
+  talents:
+    name: "<light_purple><bold>Talents"
+    lore:
+      - "<gray>At levels 5, 10, 15, 20, 30, 40 and 50 you pick"
+      - "<gray>one of two talents (top or bottom)."
+      - "<dark_gray>You can change them any time, outside combat."
+  cooldown: "<dark_gray>Cooldown: <seconds>s"
+  ability-chosen: "<green><bold>✔ CHOSEN"
+  ability-pick: "<yellow>Click to choose it"
+  talent-off: "<red>✖ Turned off on this server"
+  talent-locked: "<red>✖ Unlocks at level <level>"
+  talent-chosen: "<green><bold>✔ CHOSEN"
+  talent-pick: "<yellow>Click to choose it"
+# Names of the three ability slots.
+slot:
+  on_hit: "On hit"
+  passive: "Always on"
+  skill: "Skill (M2)"
+  spell: "Spell (sneak + M2)"
+# How each path's M2 skill is used, and what earns it XP.
+path:
+  duelist:
+    trigger: "right-click with the sword"
+    xp-source: "sword hits and kills"
+  warbringer:
+    trigger: "right-click with the axe"
+    xp-source: "axe hits and kills"
+  ranger:
+    trigger: "sneak + fully drawn bow"
+    xp-source: "arrows shot with the bow"
+  arbalist:
+    trigger: "sneak + shoot the crossbow"
+    xp-source: "arrows shot with the crossbow"
+  tidecaller:
+    trigger: "sneak + right-click with the trident"
+    xp-source: "trident hits (thrown too)"
+  juggernaut:
+    trigger: "right-click with the mace"
+    xp-source: "mace hits and kills"
+  sentinel:
+    trigger: "sneak + right-click with the shield"
+    xp-source: "hits blocked with the shield and kills with the shield on you"
+  shadow:
+    trigger: "right-click with the sword"
+    xp-source: "sword hits and kills"
+  beastmaster:
+    trigger: "right-click with a bone"
+    xp-source: "hits and kills by your tamed animals"
+  pyromancer:
+    trigger: "right-click with the staff (Blaze Rod)"
+    xp-source: "fire bolts (left-click with the staff)"
+  frost_warden:
+    trigger: "right-click with the staff (Breeze Rod)"
+    xp-source: "ice bolts (left-click with the staff)"
+  lancer:
+    trigger: "sneak + right-click with the spear"
+    xp-source: "spear hits and kills"
+# Talents: name and description.
+talent:
+  hit_power:
+    name: "Heavy Hitter"
+    description: "The on-hit passive is 30% stronger."
+  lifesteal:
+    name: "Bloodthirst"
+    description: "Damage dealt with the path heals you for 5% of it."
+  skill_power:
+    name: "Amplified Skill"
+    description: "The M2 skill is 30% stronger."
+  skill_haste:
+    name: "Quick Recharge"
+    description: "The M2 skill recharges 25% faster."
+  passive_power:
+    name: "Hardened Passive"
+    description: "The always-on passive is 30% stronger."
+  swift:
+    name: "Light Step"
+    description: "+10% movement speed while the path is active."
+  guard:
+    name: "Thick Skin"
+    description: "You take 10% less damage."
+  might:
+    name: "Path Might"
+    description: "You deal 10% more damage with the path."
+  kill_reset:
+    name: "Hunt"
+    description: "Every kill with the path halves the M2 cooldown."
+  endurance:
+    name: "Veteran Endurance"
+    description: "+2 hearts of max health while the path is active."
+  focus:
+    name: "Focus"
+    description: "The M2 skill recharges another 15% faster."
+  fervor:
+    name: "Fervor"
+    description: "+10% attack speed while the path is active."
+  second_wind:
+    name: "Second Wind"
+    description: "Every kill with the path heals you 2 hearts."
+  legend:
+    name: "Legend"
+    description: "You deal 10% more damage with the path and get a ★ in your chat title."
+  unyielding:
+    name: "Unyielding"
+    description: "Once every 3 minutes, a fatal hit leaves you at one heart instead of killing you."
+# Abilities: description and level upgrades.
+ability:
+  precision:
+    description: "The 4th hit on the same target is a guaranteed critical slash; critical hits deal extra damage."
+    upgrades:
+      - "Lvl 5: every 3rd hit"
+      - "Lvl 20: Precision hits heal you"
+  riposte:
+    description: "After taking a melee hit, your next sword hit (within 3s) deals +40% damage."
+    upgrades:
+      - "Lvl 10: and heals you one heart"
+  fleet_foot:
+    description: "More movement and attack speed."
+    upgrades:
+      - "Lvl 15: doubles below half health"
+  en_garde:
+    description: "While holding a sword you take 8% less melee damage (grows with level)."
+    upgrades:
+      - "Lvl 10: and a 15% chance to dodge a melee hit completely"
+  lunge:
+    description: "Dash forward and pierce the first enemy."
+    upgrades:
+      - "Lvl 10: reaches further and hits harder"
+  feint:
+    description: "Jump back and daze the enemy in front of you; your next sword hit (within 3s) is a critical (x1.5)."
+    upgrades:
+      - "Lvl 10: the daze lasts twice as long"
+  rend:
+    description: "Hits tear armor: the target takes more damage for 4s (stacks 3 times)."
+    upgrades:
+      - "Lvl 5: stacks 4 times"
+  sunder:
+    description: "Charged hits have a 15% chance (grows with level) to break the target's armor: −4 armor and Weakness for 5s."
+    upgrades:
+      - "Lvl 10: −6 armor"
+  bloodrage:
+    description: "The less health you have, the more melee damage you deal."
+    upgrades:
+      - "Lvl 15: heals you below 30% health"
+  ironhide:
+    description: "+2 armor (grows with level) and 30% knockback resistance."
+    upgrades:
+      - "Lvl 10: double knockback resistance"
+  crushing_blow:
+    description: "Your next hit within 3s crushes for huge damage and dazes."
+    upgrades:
+      - "Lvl 10: sends out a shockwave"
+      - "Lvl 20: kills reset Crushing Blow"
+  battle_leap:
+    description: "Leap to where you're looking and land with a blow that hurts and slows around you."
+    upgrades:
+      - "Lvl 10: bigger radius and dazes"
+  headhunter:
+    description: "Arrows shot from far away deal extra damage (the further, the more)."
+    upgrades:
+      - "Lvl 5: hits from over 20 blocks slow the target"
+  venom_tips:
+    description: "Arrows from a fully drawn bow poison the target for 2s (grows with level)."
+    upgrades:
+      - "Lvl 10: Poison II"
+  eagle_eye:
+    description: "Faster arrows and a chance not to use up the arrow."
+    upgrades:
+      - "Lvl 15: keeps the arrow twice as often"
+  camouflage:
+    description: "Stand still while sneaking for 2s to turn invisible; the first arrow shot from invisibility deals +30% damage."
+    upgrades:
+      - "Lvl 10: +60% damage"
+  power_shot:
+    description: "An arrow that pierces and knocks back."
+    upgrades:
+      - "Lvl 10: pierces 5 targets"
+      - "Lvl 20: targets glow and are slowed"
+  snare_shot:
+    description: "The arrow roots the target for 3s."
+    upgrades:
+      - "Lvl 10: also catches those around the target"
+  armor_piercer:
+    description: "Crossbow arrows deal extra damage to armored targets."
+    upgrades:
+      - "Lvl 5: arrows disable raised shields"
+  concussion:
+    description: "Crossbow arrows have a 15% chance (grows with level) to daze the target for 1.5s."
+    upgrades:
+      - "Lvl 10: the daze lasts 2.5s"
+  steady_hands:
+    description: "Arrows hit harder when you stand still or sneak; a chance to load without using ammo."
+    upgrades:
+      - "Lvl 15: keeps the ammo twice as often"
+  deadeye:
+    description: "Crossbow arrows fly 20% faster and straight (no drop) for the first 15 blocks."
+    upgrades:
+      - "Lvl 10: pierce one extra enemy"
+  heavy_bolt:
+    description: "An arrow that throws the target back and dazes it."
+    upgrades:
+      - "Lvl 10: sends out a shockwave"
+      - "Lvl 20: the cooldown is halved"
+  cluster_bolt:
+    description: "On impact, the arrow splits into 5 small arrows that rain down around it."
+    upgrades:
+      - "Lvl 10: 8 arrows"
+  soaked:
+    description: "Trident hits (thrown too) soak the target for 5s: it's slowed and takes +10% damage from you (double in the rain)."
+    upgrades:
+      - "Lvl 10: Slowness II"
+  undertow:
+    description: "Trident hits pull the target towards you and give it Weakness for 2s."
+    upgrades:
+      - "Lvl 10: Weakness II"
+  sea_blessed:
+    description: "In water you get Dolphin's Grace; in the rain or in water you deal +10% damage (grows with level)."
+    upgrades:
+      - "Lvl 10: and you breathe underwater"
+  stormborn:
+    description: "Thrown tridents call lightning (no fire) on impact: always in the rain, otherwise a 20% chance."
+    upgrades:
+      - "Lvl 10: the lightning also hits around"
+  maelstrom:
+    description: "A whirlpool where you're looking pulls enemies to the center and hurts them for 3s."
+    upgrades:
+      - "Lvl 10: lasts 5s"
+  geyser:
+    description: "Water fountains throw the enemies in front of you into the air."
+    upgrades:
+      - "Lvl 10: and slow them"
+  aftershock:
+    description: "Mace hits crack the ground: 25% of the damage (grows with level) hits enemies around."
+    upgrades:
+      - "Lvl 10: bigger radius"
+  shattering:
+    description: "Hits weaken the target for 4s; a falling hit (smash) also dazes it for 2s."
+    upgrades:
+      - "Lvl 10: 3s daze"
+  unstoppable:
+    description: "50% knockback resistance; fall damage is 30% lower (grows with level), and what you avoided is added to your next mace hit."
+    upgrades:
+      - "Lvl 10: full knockback resistance"
+  iron_skin:
+    description: "+4 max health and extra armor toughness (grows with level)."
+    upgrades:
+      - "Lvl 10: +6 max health"
+  seismic_leap:
+    description: "Leap up and crash down with a shockwave (stronger the higher you fall from)."
+    upgrades:
+      - "Lvl 10: bigger radius and dazes"
+  gravity_crush:
+    description: "Pull enemies within 8 blocks towards you, then slam them into the ground."
+    upgrades:
+      - "Lvl 10: from 12 blocks"
+  retaliation:
+    description: "Every hit blocked with the shield charges Retaliation: your next attack (within 5s) deals +30% damage per stack (max 3)."
+    upgrades:
+      - "Lvl 10: max 5 stacks"
+  shield_spikes:
+    description: "Enemies who hit your shield take damage back and are knocked away."
+    upgrades:
+      - "Lvl 10: and are slowed"
+  stalwart:
+    description: "−15% damage from arrows and explosions (grows with level)."
+    upgrades:
+      - "Lvl 10: and −10% from every other source"
+  guardian:
+    description: "Players around you (6 blocks) take −8% damage (grows with level)."
+    upgrades:
+      - "Lvl 10: 10 block radius"
+  bulwark:
+    description: "For 3s you take no damage, and melee damage is returned to the attacker."
+    upgrades:
+      - "Lvl 10: 5s"
+  shield_charge:
+    description: "Charge forward with your shield, knocking back and dazing everything you hit."
+    upgrades:
+      - "Lvl 10: longer and stronger charge"
+  backstab:
+    description: "Hits from behind the target deal +40% damage (grows with level)."
+    upgrades:
+      - "Lvl 10: and blind the target for 2s"
+  nightblade:
+    description: "At night or in the dark, sword hits deal +15% damage (grows with level)."
+    upgrades:
+      - "Lvl 10: and heal you for 5% of the damage"
+  shadow_veil:
+    description: "After a kill you turn invisible for 2s and get Speed."
+    upgrades:
+      - "Lvl 10: 4s"
+  elusive:
+    description: "8% chance (grows with level) to dodge a hit completely."
+    upgrades:
+      - "Lvl 10: after a dodge, your next sword hit is a critical (x1.5)"
+  vanish:
+    description: "Turn invisible for 4s and mobs lose track of you; your next hit is a critical (x1.8) and ends the invisibility."
+    upgrades:
+      - "Lvl 10: 6s and Speed"
+  smoke_bomb:
+    description: "A smoke bomb blinds and slows enemies within 5 blocks; you get Speed II for 3s."
+    upgrades:
+      - "Lvl 10: 7 blocks and Weakness"
+  pack_mark:
+    description: "Your hits (with anything) mark the target for 5s: your animals attack it and deal +20% damage to it (grows with level)."
+    upgrades:
+      - "Lvl 10: the marked target glows"
+  predator:
+    description: "You deal +10% damage (grows with level) to targets your animals attacked in the last 5s."
+    upgrades:
+      - "Lvl 10: you heal one heart when one of your animals kills something"
+  alpha_bond:
+    description: "Your tamed animals nearby get +20% health (grows with level) and Regeneration."
+    upgrades:
+      - "Lvl 10: and +20% damage"
+  pack_leader:
+    description: "With at least 2 animals near you, you get Resistance I and they get Speed."
+    upgrades:
+      - "Lvl 10: with 3+ animals, Strength I too"
+  call_of_the_wild:
+    description: "Summon 2 wolves (30s) that fight for you."
+    upgrades:
+      - "Lvl 10: 3 wolves"
+  rally:
+    description: "Your animals within 24 blocks come to you, heal and get Strength II and Speed for 10s."
+    upgrades:
+      - "Lvl 10: and Resistance"
+  ignite:
+    description: "Bolts set the target on fire for 3s; burning targets take +10% damage from you (grows with level)."
+    upgrades:
+      - "Lvl 10: the fire jumps to a nearby enemy"
+  combustion:
+    description: "Every 4th bolt explodes (without breaking blocks) and hurts around it."
+    upgrades:
+      - "Lvl 10: every 3rd"
+  flameward:
+    description: "Permanent Fire Resistance."
+    upgrades:
+      - "Lvl 10: and Speed I in the Nether"
+  ember_aura:
+    description: "Enemies who hit you in melee catch fire for 3s."
+    upgrades:
+      - "Lvl 10: and take damage"
+  fireball:
+    description: "A fireball that explodes (without breaking blocks) and hurts within 3 blocks."
+    upgrades:
+      - "Lvl 10: leaves a ring of fire for 3s"
+  flame_wave:
+    description: "A wave of flames in front of you (6 blocks) burns and hurts."
+    upgrades:
+      - "Lvl 10: 8 blocks and knocks back"
+  chill:
+    description: "Bolts chill the target (slowness); at 3 stacks it freezes for 2s."
+    upgrades:
+      - "Lvl 10: freezes for 3s and takes damage"
+  shatter_shot:
+    description: "Slowed or frozen targets take +25% damage from you (grows with level)."
+    upgrades:
+      - "Lvl 10: 30% of the damage also hits enemies around"
+  winters_grace:
+    description: "Water freezes under your steps, and the cold (powder snow) doesn't hurt you."
+    upgrades:
+      - "Lvl 10: Speed I on ice and snow"
+  frost_armor:
+    description: "Enemies who hit you in melee are slowed for 2s and take damage."
+    upgrades:
+      - "Lvl 10: and are frozen for 1s"
+  blizzard:
+    description: "An ice storm where you're looking (4s) hurts and slows, then freezes everything."
+    upgrades:
+      - "Lvl 10: bigger radius"
+  frost_nova:
+    description: "An ice blast freezes enemies within 5 blocks for 2s."
+    upgrades:
+      - "Lvl 10: 7 blocks and damage"
+  cinder_chain:
+    description: "A bolt on a burning target jumps to one more enemy within 4 blocks for 50% of the damage."
+    upgrades:
+      - "Lvl 10: jumps to 2 enemies"
+  kindled_soul:
+    description: "Every staff kill gives a Heat stack (max 5, 8s): +5% bolt damage per stack."
+    upgrades:
+      - "Lvl 10: at 5 stacks, bolts fire 30% more often"
+  fire_pillar:
+    description: "A 3s column of fire where you're looking: hurts, ignites and throws enemies up."
+    upgrades:
+      - "Lvl 10: wider and stronger"
+  blazing_leap:
+    description: "Leap forward and up from a burst of flames that burns enemies around you; no fall damage."
+    upgrades:
+      - "Lvl 10: flames where you land too"
+  phoenix_ward:
+    description: "A 6s fire shield: +4 hearts of absorption, melee attackers catch fire, and it explodes when it ends."
+    upgrades:
+      - "Lvl 10: +6 hearts"
+  icicle_pierce:
+    description: "Bolts pass through the first target and also hit the enemy behind it (6 blocks) for 60% of the damage."
+    upgrades:
+      - "Lvl 10: frozen targets take +4 damage"
+  permafrost:
+    description: "Monsters within 4 blocks of you are slowed."
+    upgrades:
+      - "Lvl 10: 6 blocks, and they take +10% damage from you"
+  glacial_lance:
+    description: "An ice lance flies 16 blocks ahead, hurting and freezing everything it pierces."
+    upgrades:
+      - "Lvl 10: 24 blocks"
+  frost_step:
+    description: "Teleport 6 blocks ahead, leaving an ice trail that slows enemies."
+    upgrades:
+      - "Lvl 10: 9 blocks and a small ice blast where you arrive"
+  ice_block:
+    description: "Encase yourself in ice for 3s: no damage taken and you can't move, but you heal one heart per second."
+    upgrades:
+      - "Lvl 10: also removes negative effects"
+  skewer:
+    description: "Charged spear hits pierce: the enemy behind the target (3 blocks) takes 40% of the damage."
+    upgrades:
+      - "Lvl 10: 60% of the damage"
+  momentum_strike:
+    description: "Hits while sprinting or mounted deal +25% damage (grows with level) and knock the target further."
+    upgrades:
+      - "Lvl 15: and slow the target for 2s"
+  long_reach:
+    description: "While holding a spear you reach further: +0.5 blocks attack range (grows with level)."
+    upgrades:
+      - "Lvl 15: another +0.5 blocks"
+  cavalier:
+    description: "While holding a spear: +8% movement speed; when mounted you take 15% less damage."
+    upgrades:
+      - "Lvl 10: 25% less damage when mounted"
+  charge_line:
+    description: "Dash 8 blocks forward, spear first, hitting everything in the line."
+    upgrades:
+      - "Lvl 10: 11 blocks, and enemies hit are slowed"
+  war_banner:
+    description: "Plant a war banner for 8s: you and players within 6 blocks get Strength I."
+    upgrades:
+      - "Lvl 10: and Resistance I"

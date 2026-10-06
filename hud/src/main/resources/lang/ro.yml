@@ -1,0 +1,41 @@
+# Mesajele Hud (format MiniMessage).
+players-only: "<red>Doar jucătorii pot face asta."
+not-online: "<red>Acel jucător nu este online."
+feature-off: "<gray>Funcția asta este oprită pe server."
+pack-prompt: "Adaugă iconițe personalizate în meniurile /skills, /paths, /professions și /enchants."
+
+toggle:
+  sidebar-on: "<green>Panoul lateral este afișat."
+  sidebar-off: "<gray>Panoul lateral este ascuns."
+  damage-numbers-on: "<green>Numerele de daune sunt afișate."
+  damage-numbers-off: "<gray>Numerele de daune sunt ascunse."
+
+sidebar:
+  target: "<red>◎ <name>"
+  target-health: "<white>  ❤ <health><gray>/<max>"
+  paths: "<yellow>⚔ Paths"
+  no-path: "<dark_gray>  niciun path - /paths"
+  combo: "<yellow>✦ Combo <white><bold>x<combo>"
+  cooldowns: "<yellow>⌛ Reîncărcări"
+  more: "<dark_gray>  +<count> în plus"
+  weapon: "<yellow>⚒ <weapon> <light_purple>mastery <mastery>"
+  professions: "<yellow>⛏ Profesii"
+  enchantments: "<yellow>✧ Vrăji"
+  level: "<white>  <name> <green>Lvl <level>"
+  level-max: "<white>  <name> <gold>Lvl <level>"
+
+combo:
+  finisher: "<gold><bold>✦ LOVITURĂ FINALĂ x<max>!"
+  bar: "<yellow><bold>✦ Combo x<combo></bold><white>  +<bonus>% daune"
+  bar-high: "<gold><bold>✦ Combo x<combo></bold><white>  +<bonus>% daune"
+
+stats:
+  header: "<gold><bold>✦ <player> - statistici"
+  line: "<gray>  <name>: <white><value>"
+  kills: "Ucideri"
+  kills-value: "<total> (<mobs> creaturi, <players> jucători)"
+  deaths: "Morți"
+  kd: "Ucideri per moarte"
+  best-combo: "Cel mai mare combo"
+  finishers: "Lovituri finale"
+  skills-used: "Abilități folosite"

@@ -1,0 +1,516 @@
+# Mesajele Paths (format MiniMessage). Numele path-urilor și abilităților rămân în engleză.
+# Descrierile și îmbunătățirile sunt text simplu. Liniile de îmbunătățire încep cu "Lvl <nivel>:".
+no-permission: "<red>Nu ai permisiunea."
+chat-title: "<dark_gray>[<title><dark_gray>] "
+skill-used: "<white>✦ <skill>!"
+skill-ready: "<green><skill> - gata"
+unyielding: "<gold>✦ Neclintit! (din nou peste 3 minute)"
+camouflaged: "<dark_green>✦ Camuflat"
+wild-wolf: "<gold>Lup sălbatic"
+no-pets: "<gray>Nu ai animale îmblânzite în apropiere."
+retaliation: "<#2e86c1>Retaliation x<stacks>"
+chose-ability: "<white><slot>: <ability>"
+chose-talent: "<light_purple>Talent: <talent>"
+talent-locked: "<red>Talentul se deblochează la nivelul <level>."
+in-combat: "<red>Nu poți schimba în timpul luptei (așteaptă <seconds> secunde)."
+drop-cooldown: "<red>Poți renunța din nou la un path în <time>."
+dropped: "<gray>Ai renunțat la path-ul <path>. (Progresul lui se păstrează.)"
+too-many: "<red>Ai deja <max> paths. Renunță întâi la unul."
+weapon-clash: "<red><other> folosește deja aceeași armă ca <path>. Alege un path cu altă armă."
+picked: "<gray>Ai ales path-ul <path><gray>."
+level-up:
+  subtitle: "<yellow>nivel de path <level>"
+  subtitle-max: "<yellow>nivel de path <level> (stăpânit!)"
+  chat: "<gold>⬆ <path><gray> este acum nivelul <level>."
+  upgrade: "<light_purple>  ✦ <ability>: <upgrade>"
+  new-talent: "<light_purple>  ✦ Talent nou de ales: scrie /paths și deschide <path>."
+unit:
+  minute:
+    one: "un minut"
+    few: "<n> minute"
+    other: "<n> de minute"
+  talent:
+    one: "un talent de ales"
+    few: "<n> talente de ales"
+    other: "<n> de talente de ales"
+menu:
+  title: "<dark_red><bold>⚔ Paths - alege <max>"
+  back: "<yellow>← Înapoi"
+  info:
+    name: "<gold>Paths-urile tale"
+    active: "<yellow>Active: <paths> (<count>/<max>)"
+    none: "niciuna"
+    lore:
+      - "<gray>Click pe un path ca să îl vezi, să îl alegi"
+      - "<gray>și să îi alegi abilitățile și talentele."
+      - "<dark_gray>Două paths active nu pot folosi aceeași armă."
+      - "<dark_gray>Progresul se păstrează pentru fiecare path."
+    cooldown: "<red>Poți renunța din nou la un path în <time>."
+    can-switch: "<green>Poți schimba paths acum."
+  active: "<green><bold>✔ ACTIV"
+  inactive: "<dark_gray>Inactiv"
+  level: "<yellow>Nivel: <level> / <max>"
+  max-level: "<gold>Nivel maxim!"
+  slot-line: "<gold><slot>: <white><ability>"
+  open-talents: "<light_purple>✦ <count>"
+  m2: "<dark_gray>M2: <trigger>"
+  m2-header: "<aqua>M2: <trigger>"
+  click-open: "<green>Click ca să deschizi"
+  veteran: "<dark_gray>Veteran (nivel peste 20): +<bonus>% daune (+0,5% pe nivel)"
+  veteran-on: "<dark_gray>Veteran (nivel peste 20): <green>+<bonus>% daune<dark_gray> (+0,5% pe nivel)"
+  bolt-fire: "<aqua>Click stânga cu toiagul: un bolt de foc."
+  bolt-ice: "<aqua>Click stânga cu toiagul: un bolt de gheață."
+  spell-header: "<aqua>Furișat + click dreapta cu toiagul: vraja ta."
+  xp-from: "<dark_gray>XP din <source> (doar cât e activ)."
+  drop:
+    name: "<red>Renunță la <path>"
+    kept: "<gray>Progresul se păstrează."
+    cooldown: "<red>Poți renunța în <time>."
+    pause: "<dark_gray>După ce renunți: pauză de <time>."
+  pick:
+    name: "<green>Alege <path>"
+    count: "<gray>Ai <count>/<max> paths active."
+  slot-name: "<gold><bold><slot>"
+  slot-lore:
+    - "<gray>Alege una →"
+  spell-lore:
+    - "<gray>Furișat + click dreapta cu toiagul."
+    - "<gray>Alege una →"
+  talents:
+    name: "<light_purple><bold>Talente"
+    lore:
+      - "<gray>La nivelurile 5, 10, 15, 20, 30, 40 și 50 alegi"
+      - "<gray>unul din două talente (sus sau jos)."
+      - "<dark_gray>Le poți schimba oricând, în afara luptei."
+  cooldown: "<dark_gray>Reîncărcare: <seconds>s"
+  ability-chosen: "<green><bold>✔ ALEASĂ"
+  ability-pick: "<yellow>Click ca să o alegi"
+  talent-off: "<red>✖ Oprit pe acest server"
+  talent-locked: "<red>✖ Se deblochează la nivelul <level>"
+  talent-chosen: "<green><bold>✔ ALES"
+  talent-pick: "<yellow>Click ca să îl alegi"
+# Numele celor trei sloturi de abilități.
+slot:
+  on_hit: "La lovitură"
+  passive: "Permanent"
+  skill: "Abilitate (M2)"
+  spell: "Vrajă (furișat + M2)"
+# Cum se folosește abilitatea M2 a fiecărui path și ce îi dă XP.
+path:
+  duelist:
+    trigger: "click dreapta cu sabia"
+    xp-source: "lovituri și ucideri cu sabia"
+  warbringer:
+    trigger: "click dreapta cu toporul"
+    xp-source: "lovituri și ucideri cu toporul"
+  ranger:
+    trigger: "furișat + arc întins complet"
+    xp-source: "săgeți trase cu arcul"
+  arbalist:
+    trigger: "furișat + tragi cu arbaleta"
+    xp-source: "săgeți trase cu arbaleta"
+  tidecaller:
+    trigger: "furișat + click dreapta cu tridentul"
+    xp-source: "lovituri cu tridentul (și aruncat)"
+  juggernaut:
+    trigger: "click dreapta cu buzduganul"
+    xp-source: "lovituri și ucideri cu buzduganul"
+  sentinel:
+    trigger: "furișat + click dreapta cu scutul"
+    xp-source: "lovituri blocate cu scutul și ucideri cu scutul la tine"
+  shadow:
+    trigger: "click dreapta cu sabia"
+    xp-source: "lovituri și ucideri cu sabia"
+  beastmaster:
+    trigger: "click dreapta cu un os"
+    xp-source: "lovituri și ucideri ale animalelor tale îmblânzite"
+  pyromancer:
+    trigger: "click dreapta cu toiagul (Blaze Rod)"
+    xp-source: "bolturi de foc (click stânga cu toiagul)"
+  frost_warden:
+    trigger: "click dreapta cu toiagul (Breeze Rod)"
+    xp-source: "bolturi de gheață (click stânga cu toiagul)"
+  lancer:
+    trigger: "furișat + click dreapta cu sulița"
+    xp-source: "lovituri și ucideri cu sulița"
+# Talente: nume și descriere.
+talent:
+  hit_power:
+    name: "Lovituri puternice"
+    description: "Pasiva la lovitură e cu 30% mai puternică."
+  lifesteal:
+    name: "Sete de sânge"
+    description: "Daunele făcute cu path-ul te vindecă cu 5% din ele."
+  skill_power:
+    name: "Abilitate amplificată"
+    description: "Abilitatea M2 e cu 30% mai puternică."
+  skill_haste:
+    name: "Reîncărcare rapidă"
+    description: "Abilitatea M2 se reîncarcă cu 25% mai repede."
+  passive_power:
+    name: "Pasivă întărită"
+    description: "Pasiva permanentă e cu 30% mai puternică."
+  swift:
+    name: "Pas ușor"
+    description: "+10% viteză de mișcare cât path-ul e activ."
+  guard:
+    name: "Piele groasă"
+    description: "Primești cu 10% mai puține daune."
+  might:
+    name: "Forța path-ului"
+    description: "Faci cu 10% mai multe daune cu path-ul."
+  kill_reset:
+    name: "Vânătoare"
+    description: "Fiecare ucidere cu path-ul înjumătățește reîncărcarea abilității M2."
+  endurance:
+    name: "Rezistență de veteran"
+    description: "+2 inimi de viață maximă cât path-ul e activ."
+  focus:
+    name: "Concentrare"
+    description: "Abilitatea M2 se reîncarcă cu încă 15% mai repede."
+  fervor:
+    name: "Fervoare"
+    description: "+10% viteză de atac cât path-ul e activ."
+  second_wind:
+    name: "Al doilea suflu"
+    description: "Fiecare ucidere cu path-ul te vindecă cu 2 inimi."
+  legend:
+    name: "Legendă"
+    description: "Faci cu 10% mai multe daune cu path-ul și primești ★ în titlul din chat."
+  unyielding:
+    name: "Neclintit"
+    description: "O dată la 3 minute, o lovitură mortală te lasă cu o inimă în loc să te omoare."
+# Abilități: descriere și îmbunătățiri pe nivel.
+ability:
+  precision:
+    description: "A 4-a lovitură în aceeași țintă este o tăietură critică garantată; loviturile critice fac daune în plus."
+    upgrades:
+      - "Lvl 5: la fiecare a 3-a lovitură"
+      - "Lvl 20: loviturile Precision te vindecă"
+  riposte:
+    description: "După ce primești o lovitură corp la corp, următoarea ta lovitură cu sabia (în 3s) face +40% daune."
+    upgrades:
+      - "Lvl 10: și te vindecă o inimă"
+  fleet_foot:
+    description: "Mai multă viteză de mișcare și de atac."
+    upgrades:
+      - "Lvl 15: se dublează sub jumătate din viață"
+  en_garde:
+    description: "Cât ții sabia în mână primești cu 8% mai puține daune corp la corp (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: și 15% șansă să eviți complet o lovitură corp la corp"
+  lunge:
+    description: "Țâșnești înainte și străpungi primul inamic."
+    upgrades:
+      - "Lvl 10: ajunge mai departe și lovește mai tare"
+  feint:
+    description: "Sari înapoi, iar inamicul din fața ta e amețit; următoarea ta lovitură cu sabia (în 3s) e critică (x1.5)."
+    upgrades:
+      - "Lvl 10: amețirea durează dublu"
+  rend:
+    description: "Loviturile sfâșie armura: ținta primește mai multe daune timp de 4s (se cumulează de 3 ori)."
+    upgrades:
+      - "Lvl 5: se cumulează de 4 ori"
+  sunder:
+    description: "Loviturile încărcate au 15% șansă (crește cu nivelul) să spargă armura țintei: −4 armură și Slăbiciune 5s."
+    upgrades:
+      - "Lvl 10: −6 armură"
+  bloodrage:
+    description: "Cu cât ai mai puțină viață, cu atât faci mai multe daune corp la corp."
+    upgrades:
+      - "Lvl 15: te vindecă sub 30% viață"
+  ironhide:
+    description: "+2 armură (crește cu nivelul) și 30% rezistență la împingere."
+    upgrades:
+      - "Lvl 10: rezistență la împingere dublă"
+  crushing_blow:
+    description: "Următoarea ta lovitură din 3s zdrobește pentru daune uriașe și amețește."
+    upgrades:
+      - "Lvl 10: trimite o undă de șoc"
+      - "Lvl 20: uciderile resetează Crushing Blow"
+  battle_leap:
+    description: "Sari spre locul la care te uiți și aterizezi cu o lovitură care rănește și încetinește în jur."
+    upgrades:
+      - "Lvl 10: rază mai mare și amețește"
+  headhunter:
+    description: "Săgețile trase de departe fac daune în plus (cu atât mai multe cu cât ești mai departe)."
+    upgrades:
+      - "Lvl 5: loviturile de peste 20 de blocuri încetinesc ținta"
+  venom_tips:
+    description: "Săgețile trase cu arcul întins complet otrăvesc ținta 2s (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: Otravă II"
+  eagle_eye:
+    description: "Săgeți mai rapide și șansa de a nu consuma săgeata."
+    upgrades:
+      - "Lvl 15: păstrează săgeata de două ori mai des"
+  camouflage:
+    description: "Stai furișat nemișcat 2s și devii invizibil; prima săgeată trasă din invizibilitate face +30% daune."
+    upgrades:
+      - "Lvl 10: +60% daune"
+  power_shot:
+    description: "O săgeată care străpunge și împinge."
+    upgrades:
+      - "Lvl 10: străpunge 5 ținte"
+      - "Lvl 20: țintele strălucesc și sunt încetinite"
+  snare_shot:
+    description: "Săgeata imobilizează ținta 3s."
+    upgrades:
+      - "Lvl 10: îi prinde și pe cei din jurul țintei"
+  armor_piercer:
+    description: "Săgețile de arbaletă fac daune în plus țintelor cu armură."
+    upgrades:
+      - "Lvl 5: săgețile dezactivează scuturile ridicate"
+  concussion:
+    description: "Săgețile de arbaletă au 15% șansă (crește cu nivelul) să amețească ținta 1.5s."
+    upgrades:
+      - "Lvl 10: amețirea durează 2.5s"
+  steady_hands:
+    description: "Săgețile lovesc mai tare când stai pe loc sau furișat; șansă de a încărca fără să consumi muniție."
+    upgrades:
+      - "Lvl 15: păstrează muniția de două ori mai des"
+  deadeye:
+    description: "Săgețile de arbaletă zboară cu 20% mai repede și drept (fără cădere) pe primele 15 blocuri."
+    upgrades:
+      - "Lvl 10: străpung un inamic în plus"
+  heavy_bolt:
+    description: "O săgeată care aruncă ținta înapoi și o amețește."
+    upgrades:
+      - "Lvl 10: trimite o undă de șoc"
+      - "Lvl 20: reîncărcarea se înjumătățește"
+  cluster_bolt:
+    description: "La impact, săgeata se desface în 5 săgeți mici care cad în jur."
+    upgrades:
+      - "Lvl 10: 8 săgeți"
+  soaked:
+    description: "Loviturile cu tridentul (și cele aruncate) udă ținta 5s: e încetinită și primește +10% daune de la tine (dublu pe ploaie)."
+    upgrades:
+      - "Lvl 10: Încetinire II"
+  undertow:
+    description: "Loviturile cu tridentul trag ținta spre tine și îi dau Slăbiciune 2s."
+    upgrades:
+      - "Lvl 10: Slăbiciune II"
+  sea_blessed:
+    description: "În apă primești Grația delfinului; pe ploaie sau în apă faci +10% daune (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: și respiri sub apă"
+  stormborn:
+    description: "Tridentele aruncate cheamă un fulger (fără foc) la impact: mereu pe ploaie, altfel 20% șansă."
+    upgrades:
+      - "Lvl 10: fulgerul lovește și în jur"
+  maelstrom:
+    description: "Un vârtej acolo unde te uiți trage inamicii spre centru și îi rănește 3s."
+    upgrades:
+      - "Lvl 10: durează 5s"
+  geyser:
+    description: "Fântâni de apă aruncă în aer inamicii din fața ta."
+    upgrades:
+      - "Lvl 10: și îi încetinesc"
+  aftershock:
+    description: "Loviturile cu buzduganul crapă pământul: 25% din daune (crește cu nivelul) lovesc inamicii din jur."
+    upgrades:
+      - "Lvl 10: rază mai mare"
+  shattering:
+    description: "Loviturile slăbesc ținta 4s; o lovitură din cădere (smash) o și amețește 2s."
+    upgrades:
+      - "Lvl 10: amețire 3s"
+  unstoppable:
+    description: "50% rezistență la împingere; daunele din cădere scad cu 30% (crește cu nivelul), iar ce ai evitat se adaugă la următoarea lovitură cu buzduganul."
+    upgrades:
+      - "Lvl 10: rezistență totală la împingere"
+  iron_skin:
+    description: "+4 viață maximă și duritate a armurii în plus (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: +6 viață maximă"
+  seismic_leap:
+    description: "Sari sus și te prăbușești cu o undă de șoc (mai puternică cu cât cazi de mai sus)."
+    upgrades:
+      - "Lvl 10: rază mai mare și amețește"
+  gravity_crush:
+    description: "Tragi spre tine inamicii din 8 blocuri, apoi îi strivești de pământ."
+    upgrades:
+      - "Lvl 10: din 12 blocuri"
+  retaliation:
+    description: "Fiecare lovitură blocată cu scutul încarcă Retaliation: următorul tău atac (în 5s) face +30% daune pe cumul (max 3)."
+    upgrades:
+      - "Lvl 10: max 5 cumuluri"
+  shield_spikes:
+    description: "Inamicii care îți lovesc scutul primesc daune înapoi și sunt împinși."
+    upgrades:
+      - "Lvl 10: și sunt încetiniți"
+  stalwart:
+    description: "−15% daune din săgeți și explozii (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: și −10% din orice altă sursă"
+  guardian:
+    description: "Jucătorii din jurul tău (6 blocuri) primesc −8% daune (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: rază de 10 blocuri"
+  bulwark:
+    description: "3s nu primești daune, iar daunele corp la corp se întorc la atacator."
+    upgrades:
+      - "Lvl 10: 5s"
+  shield_charge:
+    description: "Șarjezi înainte cu scutul, împingând și amețind tot ce lovești."
+    upgrades:
+      - "Lvl 10: șarjă mai lungă și mai puternică"
+  backstab:
+    description: "Loviturile din spatele țintei fac +40% daune (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: și orbesc ținta 2s"
+  nightblade:
+    description: "Noaptea sau în întuneric loviturile cu sabia fac +15% daune (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: și te vindecă 5% din daune"
+  shadow_veil:
+    description: "După o ucidere devii invizibil 2s și primești Viteză."
+    upgrades:
+      - "Lvl 10: 4s"
+  elusive:
+    description: "8% șansă (crește cu nivelul) să eviți complet o lovitură."
+    upgrades:
+      - "Lvl 10: după ce eviți, următoarea lovitură cu sabia e critică (x1.5)"
+  vanish:
+    description: "Devii invizibil 4s și creaturile te pierd din ochi; următoarea lovitură e critică (x1.8) și te scoate din invizibilitate."
+    upgrades:
+      - "Lvl 10: 6s și Viteză"
+  smoke_bomb:
+    description: "O bombă de fum orbește și încetinește inamicii din 5 blocuri; tu primești Viteză II 3s."
+    upgrades:
+      - "Lvl 10: 7 blocuri și Slăbiciune"
+  pack_mark:
+    description: "Loviturile tale (cu orice) marchează ținta 5s: animalele tale o atacă și îi fac +20% daune (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: ținta marcată strălucește"
+  predator:
+    description: "Faci +10% daune (crește cu nivelul) țintelor atacate în ultimele 5s de animalele tale."
+    upgrades:
+      - "Lvl 10: te vindeci o inimă când un animal al tău ucide ceva"
+  alpha_bond:
+    description: "Animalele tale îmblânzite din apropiere au +20% viață (crește cu nivelul) și Regenerare."
+    upgrades:
+      - "Lvl 10: și +20% daune"
+  pack_leader:
+    description: "Cu cel puțin 2 animale lângă tine primești Rezistență I, iar ele primesc Viteză."
+    upgrades:
+      - "Lvl 10: cu 3+ animale, și Forță I"
+  call_of_the_wild:
+    description: "Chemi 2 lupi (30s) care luptă pentru tine."
+    upgrades:
+      - "Lvl 10: 3 lupi"
+  rally:
+    description: "Animalele tale din 24 de blocuri vin la tine, se vindecă și primesc Forță II și Viteză 10s."
+    upgrades:
+      - "Lvl 10: și Rezistență"
+  ignite:
+    description: "Bolturile aprind ținta 3s; țintele care ard primesc +10% daune de la tine (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: focul sare la un inamic apropiat"
+  combustion:
+    description: "Fiecare al 4-lea bolt explodează (fără să spargă blocuri) și rănește în jur."
+    upgrades:
+      - "Lvl 10: la fiecare al 3-lea"
+  flameward:
+    description: "Rezistență la foc permanentă."
+    upgrades:
+      - "Lvl 10: și Viteză I în Nether"
+  ember_aura:
+    description: "Inamicii care te lovesc corp la corp iau foc 3s."
+    upgrades:
+      - "Lvl 10: și primesc daune"
+  fireball:
+    description: "O minge de foc care explodează (fără să spargă blocuri) și rănește în 3 blocuri."
+    upgrades:
+      - "Lvl 10: lasă un cerc de foc 3s"
+  flame_wave:
+    description: "Un val de flăcări în fața ta (6 blocuri) arde și rănește."
+    upgrades:
+      - "Lvl 10: 8 blocuri și împinge"
+  chill:
+    description: "Bolturile răcesc ținta (încetinire); la 3 cumuluri ea îngheață 2s."
+    upgrades:
+      - "Lvl 10: îngheață 3s și ia daune"
+  shatter_shot:
+    description: "Țintele încetinite sau înghețate primesc +25% daune de la tine (crește cu nivelul)."
+    upgrades:
+      - "Lvl 10: 30% din daune lovesc și inamicii din jur"
+  winters_grace:
+    description: "Apa îngheață sub pașii tăi, iar frigul (zăpada pudră) nu te rănește."
+    upgrades:
+      - "Lvl 10: Viteză I pe gheață și zăpadă"
+  frost_armor:
+    description: "Inamicii care te lovesc corp la corp sunt încetiniți 2s și primesc daune."
+    upgrades:
+      - "Lvl 10: și sunt înghețați 1s"
+  blizzard:
+    description: "O furtună de gheață acolo unde te uiți (4s) rănește și încetinește, apoi îngheață tot."
+    upgrades:
+      - "Lvl 10: rază mai mare"
+  frost_nova:
+    description: "O explozie de gheață îngheață 2s inamicii din 5 blocuri."
+    upgrades:
+      - "Lvl 10: 7 blocuri și daune"
+  cinder_chain:
+    description: "Un bolt într-o țintă care arde sare la încă un inamic din 4 blocuri și îi face 50% din daune."
+    upgrades:
+      - "Lvl 10: sare la 2 inamici"
+  kindled_soul:
+    description: "Fiecare ucidere cu toiagul îți dă un cumul de Căldură (max 5, 8s): +5% daune la bolturi pe cumul."
+    upgrades:
+      - "Lvl 10: la 5 cumuluri bolturile pleacă cu 30% mai des"
+  fire_pillar:
+    description: "O coloană de foc 3s acolo unde te uiți: rănește, aprinde și aruncă inamicii în sus."
+    upgrades:
+      - "Lvl 10: mai lată și mai puternică"
+  blazing_leap:
+    description: "Sari înainte și în sus dintr-o explozie de flăcări care arde inamicii din jur; nu iei daune de cădere."
+    upgrades:
+      - "Lvl 10: flăcări și unde aterizezi"
+  phoenix_ward:
+    description: "Un scut de foc 6s: +4 inimi de absorbție, cine te lovește corp la corp ia foc, iar la final scutul explodează."
+    upgrades:
+      - "Lvl 10: +6 inimi"
+  icicle_pierce:
+    description: "Bolturile trec prin prima țintă și lovesc și inamicul din spatele ei (6 blocuri) cu 60% din daune."
+    upgrades:
+      - "Lvl 10: țintele înghețate primesc +4 daune"
+  permafrost:
+    description: "Monștrii din 4 blocuri în jurul tău sunt încetiniți."
+    upgrades:
+      - "Lvl 10: 6 blocuri și primesc +10% daune de la tine"
+  glacial_lance:
+    description: "O suliță de gheață zboară 16 blocuri înainte, rănește și îngheață tot ce străpunge."
+    upgrades:
+      - "Lvl 10: 24 de blocuri"
+  frost_step:
+    description: "Te teleportezi 6 blocuri înainte, lăsând o dâră de gheață care încetinește inamicii."
+    upgrades:
+      - "Lvl 10: 9 blocuri și o mică explozie de gheață unde ajungi"
+  ice_block:
+    description: "Te închizi în gheață 3s: nu primești daune și nu te poți mișca, dar te vindeci o inimă pe secundă."
+    upgrades:
+      - "Lvl 10: îți scoate și efectele negative"
+  skewer:
+    description: "Loviturile încărcate cu sulița străpung: inamicul din spatele țintei (3 blocuri) primește 40% din daune."
+    upgrades:
+      - "Lvl 10: 60% din daune"
+  momentum_strike:
+    description: "Loviturile date în sprint sau călare fac +25% daune (crește cu nivelul) și împing ținta mai departe."
+    upgrades:
+      - "Lvl 15: și încetinesc ținta 2s"
+  long_reach:
+    description: "Cât ții sulița ajungi mai departe: +0,5 blocuri rază de atac (crește cu nivelul)."
+    upgrades:
+      - "Lvl 15: încă +0,5 blocuri"
+  cavalier:
+    description: "Cât ții sulița: +8% viteză de mișcare; călare primești cu 15% mai puține daune."
+    upgrades:
+      - "Lvl 10: 25% mai puține daune călare"
+  charge_line:
+    description: "Țâșnești 8 blocuri înainte cu sulița în față și lovești tot ce e pe linie."
+    upgrades:
+      - "Lvl 10: 11 blocuri, iar inamicii loviți sunt încetiniți"
+  war_banner:
+    description: "Înfigi un steag de luptă 8s: tu și jucătorii din 6 blocuri primiți Forță I."
+    upgrades:
+      - "Lvl 10: și Rezistență I"

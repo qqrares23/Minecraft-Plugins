@@ -1,0 +1,118 @@
+# Language of player messages: en, ro, or any lang/<code>.yml you add. Change live: /mm lang <code>
+# Every setting below can also be changed in-game: /mm config set <key> <value>, /mm toggle <feature>.
+language: en
+
+# Chance (0.0 - 1.0) that a hostile mob spawning naturally becomes a mighty mob.
+spawn-chance: 0.08
+
+# Chance that a mighty mob gets a second ability.
+double-ability-chance: 0.2
+
+# Spawn reasons that can produce mighty mobs (NATURAL, SPAWNER, REINFORCEMENTS, PATROL, ...).
+spawn-reasons:
+  - NATURAL
+
+# Worlds where mighty mobs, special spawns and Blood Moons happen.
+# mode: blacklist = every world except the list; whitelist = only the listed worlds.
+# (The old format, a plain list "worlds: [world]", still works and means whitelist.)
+worlds:
+  mode: blacklist
+  list: []
+
+# Mob types that never become mighty or special (e.g. [creeper, enderman]).
+ignored-mobs: []
+
+# The world plays on Normal difficulty; mighty mobs, special spawns (and the mobs that come with
+# them) and necromancer minions deal this much more damage, so they still hit like on Hard.
+buffed-damage-multiplier: 1.5
+
+# Max health of every mighty mob compared to a normal mob (1.5 = +50%).
+# Tanks get another +100% on top (2.5x total by default). Normal mobs are never changed.
+health-multiplier: 1.5
+
+# Multiplier for the XP a mighty mob drops.
+xp-multiplier: 3.0
+
+# More XP from tougher mobs (all hostile mobs, not only mighty ones).
+xp:
+  # +2.5% per health point above a zombie's 20 (enderman 40 hp: x1.5, ravager 100 hp: x3).
+  per-extra-health: 0.025
+  # +3% per armor point (an armored brute in iron: about x1.5).
+  per-armor-point: 0.03
+  # Cap for the health + armor bonus.
+  max-toughness-multiplier: 3.0
+  # Mighty mobs with two abilities: on top of xp-multiplier.
+  second-ability-multiplier: 1.5
+  # Special spawns (jockeys, horsemen, brutes...).
+  special-spawn-multiplier: 2.0
+
+# Drops from mighty mobs and special spawns. Only kills by players count.
+drops:
+  enabled: true
+  # Chance for a drop that fits the mob (per ability / per special spawn): gunpowder from an
+  # Explosive mob, ender pearls from a Blinker, slime balls from a Slime Tower...
+  themed-chance: 0.5
+  # Chance that a mighty mob gives a rare drop (enchanted book, XP bottles, emeralds, golden
+  # apple, diamonds, name tag, netherite scrap...). About a third of rare drops are books.
+  rare-chance: 0.10
+  # Added for mighty mobs with two abilities.
+  second-ability-bonus: 0.08
+  # Added per level of Looting on the weapon.
+  looting-bonus: 0.02
+  # Special spawns have their own rare chance (4% baby zombie pack ... 20% Armored Brute);
+  # this scales all of them.
+  special-rare-multiplier: 1.0
+
+# Turn individual abilities on or off.
+abilities:
+  tank: true
+  swift: true
+  berserker: true
+  venomous: true
+  frost: true
+  vampire: true
+  explosive: true
+  leaper: true
+  regenerating: true
+  blinker: true
+  necromancer: true
+
+# Health shown above every mob (mighty mobs always show theirs).
+health-display:
+  # false = no health over normal mobs (mighty mobs still show their abilities and health).
+  enabled: true
+  # false = only in the worlds above.
+  all-worlds: true
+  # true = always visible; false = only visible while you look at the mob.
+  always-visible: true
+
+# Special spawns: chance (percent) that a natural spawn of the listed mob becomes the special
+# variant. Change in-game with /mm special <type> <percent>, or turn all off with /mm special off.
+special-spawns:
+  enabled: true
+  chicken_jockey: 5        # zombie spawns -> baby zombie riding a chicken
+  spider_jockey: 5         # spider spawns -> skeleton riding it
+  charged_creeper: 3       # creeper spawns powered
+  skeleton_horseman: 1.5   # skeleton on a skeleton horse, enchanted bow
+  zombie_horseman: 1.5     # zombie on a zombie horse
+  armored_brute: 2         # zombie in iron/diamond armor with a sword
+  baby_zombie_pack: 2      # 3 extra baby zombies
+  slime_tower: 4           # 3 slimes stacked
+  bat_bomber: 1            # creeper riding a bat
+  witch_coven: 5           # 2 more witches
+  killer_bunny: 3          # rabbit spawns as the Killer Bunny
+
+# Blood Moon: now and then a night (overworld only) with far more mighty mobs and special spawns,
+# a higher monster cap and more XP. Rolled each morning and announced then; nobody can sleep
+# through it; ends at dawn. Admins: /mm bloodmoon [status|start|stop|chance <percent>].
+blood-moon:
+  enabled: true                # false = only when an admin starts one
+  worlds: []                   # overworlds that get Blood Moons; empty = every allowed overworld
+  chance: 0.12                 # chance each night (rolled in the morning)
+  min-days-between: 4          # in-game days
+  spawn-chance: 0.35           # mighty mob chance during the Blood Moon (normally spawn-chance)
+  double-ability-chance: 0.4   # second ability chance during the Blood Moon
+  special-multiplier: 3.0      # special spawn chances x this
+  spawn-limit-multiplier: 2.0  # monster cap x this (more mobs = more load on the server)
+  xp-multiplier: 2.0           # XP from every hostile mob, on top of the other bonuses
+  rare-chance-bonus: 0.05      # added to the rare drop chance of mighty mobs and special spawns

@@ -1,0 +1,14 @@
+# ItemCleaner messages (MiniMessage format: https://docs.advntr.dev/minimessage/format.html).
+# Placeholders in <angle brackets> are filled in by the plugin.
+warning: "<gold>⚠ Items on the ground will be cleared in <time>."
+cleared: "<green>✔ Cleared <count> from the ground."
+unit:
+  item:
+    one: "1 item"
+    other: "<n> items"
+  minute:
+    one: "1 minute"
+    other: "<n> minutes"
+  second:
+    one: "1 second"
+    other: "<n> seconds"

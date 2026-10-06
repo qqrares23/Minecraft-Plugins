@@ -1,0 +1,18 @@
+name: Professions
+version: '${version}'
+main: com.raresb.professions.ProfessionsPlugin
+api-version: '26.3'
+description: Level up your labour - woodcutting, mining, fishing and more - for better yields and rare finds.
+author: raresb
+commands:
+  professions:
+    description: See your profession levels and perks.
+    usage: "/professions [admin setlevel|addxp|reset|info|reload|config|toggle|lang ...]"
+    aliases: [prof, labour]
+permissions:
+  professions.admin:
+    description: Change profession levels and reload the config.
+    default: op
+  professions.use:
+    description: Earn profession XP and perks.
+    default: true

@@ -1,0 +1,16 @@
+name: MightyMobs
+version: '${version}'
+main: com.raresb.mightymobs.MightyMobsPlugin
+api-version: '26.3'
+description: Some hostile mobs spawn with special abilities and show their health above their head.
+author: raresb
+commands:
+  mightymobs:
+    description: Spawn a mighty mob or reload the config.
+    usage: "/mightymobs status | chance | doublechance | ability | special | spawn | bloodmoon | reload"
+    aliases: [mm]
+    permission: mightymobs.admin
+permissions:
+  mightymobs.admin:
+    description: Use /mightymobs.
+    default: op

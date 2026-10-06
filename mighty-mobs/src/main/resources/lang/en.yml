@@ -1,0 +1,34 @@
+# MightyMobs messages (MiniMessage format: https://docs.advntr.dev/minimessage/format.html).
+# Placeholders in <angle brackets> are filled in by the plugin.
+rare-drop: "<gold>✦ Rare drop: <item>"
+armored-brute-name: "<gray>Armored Brute"
+
+blood-moon:
+  reminder: "<#c0392b>☾ The sun is setting... the Blood Moon rises soon. Nobody can sleep tonight!"
+  announce: "<#c0392b><bold>☾ A Blood Moon rises tonight! </bold><gray>Stronger monsters, double XP and better loot. Get ready!"
+  bossbar: "<#c0392b><bold>☾ Blood Moon"
+  title: "<#c0392b><bold>Blood Moon"
+  subtitle: "<gray>Monsters are stronger. Double XP until dawn."
+  started: "<#c0392b><bold>☾ The Blood Moon has risen!"
+  ended: "<gold>☀ The Blood Moon has set. You survived!"
+  top-hunter: "<gray>Top hunter: <#c0392b><bold><player></bold><gray> (<kills>)"
+  no-sleep: "<#c0392b>You can't sleep during a Blood Moon!"
+
+unit:
+  monster:
+    one: "1 monster"
+    other: "<n> monsters"
+
+# Ability names shown above mighty mobs.
+ability:
+  tank: "Tank"
+  swift: "Swift"
+  berserker: "Berserker"
+  venomous: "Venomous"
+  frost: "Frost"
+  vampire: "Vampire"
+  explosive: "Explosive"
+  leaper: "Leaper"
+  regenerating: "Regenerating"
+  blinker: "Blinker"
+  necromancer: "Necromancer"

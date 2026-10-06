@@ -1,0 +1,17 @@
+name: Paths
+version: '${version}'
+main: com.raresb.paths.PathsPlugin
+api-version: '26.3'
+description: Choose two of 11 combat paths; pick their passives, right-click skill and talents.
+author: raresb
+commands:
+  paths:
+    description: Choose your two combat paths.
+    usage: "/paths [admin setlevel|resetcooldown|info|setactive|reload|config|toggle|lang ...]"
+permissions:
+  paths.admin:
+    description: Change path levels, reset switch cooldowns and reload.
+    default: op
+  paths.use:
+    description: Use combat paths.
+    default: true

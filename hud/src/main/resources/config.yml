@@ -1,0 +1,66 @@
+# Hud - sidebar, floating damage numbers, hit combo, /stats and the server resource pack.
+# Change settings in-game: /hud config set <key> <value>, /hud toggle <feature>, /hud reload.
+
+# Language of player messages: en, ro, or any lang/<code>.yml you add. Change live: /hud lang <code>
+language: en
+
+# Worlds where the sidebar, damage numbers and combo work.
+# mode: blacklist = every world except the list; whitelist = only the listed worlds.
+worlds:
+  mode: blacklist
+  list: []
+
+sidebar:
+  enabled: true
+  # Whether players who never used /sidebar see it.
+  default-on: true
+  # MiniMessage text, e.g. "<gold><bold>My Server".
+  title: "<gold><bold>Adventurer"
+  # Sections of the sidebar (each only shows when its plugin is installed and has something to show).
+  sections:
+    paths: true          # active paths and levels (Paths)
+    combo: true          # running hit combo
+    cooldowns: true      # skill and path cooldowns (WeaponSkills, Paths)
+    weapon: true         # held weapon and mastery (WeaponSkills)
+    professions: true    # professions that gained XP in the last minute (Professions)
+    enchantments: true   # custom enchantments on your gear (MagicEnchants)
+
+damage-numbers:
+  enabled: true
+  # Whether players who never used /damagenumbers see them.
+  default-on: true
+  # hearts (matches the mob health bars) or hp (1 heart = 2 hp)
+  unit: hearts
+
+resource-pack:
+  # Offers plugins/Hud/pack.zip (custom menu icons) to players when they join.
+  # Easiest setup: upload pack.zip anywhere public and run /hud pack url <link> - it downloads the
+  # file, saves it as pack.zip and fills in the url and the checksum players' clients check.
+  enabled: false
+  # The server answers pack downloads (HTTP) on the game port itself. This is a public host:port
+  # that reaches that port as plain TCP. NOT the playit Minecraft address: that tunnel only lets
+  # Minecraft traffic through.
+  address: ""
+  # Or: a full URL where the same pack.zip is hosted somewhere else (then address is ignored).
+  url: ""
+  # true = players who decline are kicked.
+  required: false
+  # Text on the download screen. Empty = the pack-prompt text from the language file.
+  prompt: ""
+
+combo:
+  # Seconds without landing a hit before the combo resets.
+  window-seconds: 3
+  # The combo counts up to this; the hit that reaches it is the finisher and the combo starts over.
+  max: 10
+  # Extra damage per combo step (0.03 = +3% at x1 ... +27% at x9).
+  damage-per-step: 0.03
+  # Extra damage on the finisher, on top of the combo bonus.
+  finisher-damage: 0.5
+  # Experience points a finisher gives.
+  finisher-xp: 10
+  # true = taking damage resets the combo (dodged and blocked hits don't). Off by default:
+  # in melee, mobs hit back between your swings and the combo could never build up.
+  reset-when-hurt: false
+  # Show the combo as a bar at the top of the screen.
+  bar: true
