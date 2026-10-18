@@ -1,0 +1,33 @@
+# Mesajele MightyMobs (format MiniMessage). Numele abilităților rămân în engleză.
+rare-drop: "<gold>✦ Pradă rară: <item>"
+armored-brute-name: "<gray>Armored Brute"
+
+blood-moon:
+  reminder: "<#c0392b>☾ Soarele apune... Luna Sângerie răsare în curând. În noaptea asta nu se poate dormi!"
+  announce: "<#c0392b><bold>☾ Luna Sângerie va răsări la noapte! </bold><gray>Monștri mai puternici, XP dublu și pradă mai bună. Pregătiți-vă!"
+  bossbar: "<#c0392b><bold>☾ Luna Sângerie"
+  title: "<#c0392b><bold>Luna Sângerie"
+  subtitle: "<gray>Monștrii sunt mai puternici. XP dublu până în zori."
+  started: "<#c0392b><bold>☾ Luna Sângerie a răsărit!"
+  ended: "<gold>☀ Luna Sângerie a apus. Ați supraviețuit!"
+  top-hunter: "<gray>Cel mai bun vânător: <#c0392b><bold><player></bold><gray> (<kills>)"
+  no-sleep: "<#c0392b>Nu poți dormi în noaptea Lunii Sângerii!"
+
+unit:
+  monster:
+    one: "un monstru"
+    few: "<n> monștri"
+    other: "<n> de monștri"
+
+ability:
+  tank: "Tank"
+  swift: "Swift"
+  berserker: "Berserker"
+  venomous: "Venomous"
+  frost: "Frost"
+  vampire: "Vampire"
+  explosive: "Explosive"
+  leaper: "Leaper"
+  regenerating: "Regenerating"
+  blinker: "Blinker"
+  necromancer: "Necromancer"

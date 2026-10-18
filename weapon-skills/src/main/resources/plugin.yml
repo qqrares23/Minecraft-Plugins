@@ -1,0 +1,30 @@
+name: WeaponSkills
+version: '${version}'
+main: com.raresb.weaponskills.WeaponSkillsPlugin
+api-version: '26.3'
+description: Special attacks for swords and axes, plus a shield bash. Press the swap-hands key (F) to use them.
+author: raresb
+commands:
+  skills:
+    description: Open your skills and loadout. Admins - /skills admin ...
+    usage: "/skills [admin setlevel|reset|info|resetcooldowns|reload|config|toggle|lang ...]"
+    aliases: [weaponskills]
+    permission: weaponskills.use
+  guide:
+    description: Open the Adventurer's Guide.
+    usage: /guide
+    permission: weaponskills.use
+  weaponskills-reload:
+    description: Reload the WeaponSkills config.
+    usage: /weaponskills-reload
+    permission: weaponskills.admin
+permissions:
+  weaponskills.use:
+    description: Use weapon skills.
+    default: true
+  weaponskills.dodge:
+    description: Use the dodge roll.
+    default: true
+  weaponskills.admin:
+    description: Reload the config.
+    default: op

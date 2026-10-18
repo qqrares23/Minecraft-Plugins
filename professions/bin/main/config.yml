@@ -1,0 +1,77 @@
+# Professions - everyone has all of them and levels them by doing the work.
+# In-game: /professions admin config set <key> <value>, /professions admin toggle <feature>, /professions admin reload.
+
+# Language of player messages: en, ro, or any lang/<code>.yml you add. Change live: /professions admin lang <code>
+language: en
+
+# Worlds where professions earn XP and give bonuses.
+# mode: blacklist = every world except the list; whitelist = only the listed worlds.
+worlds:
+  mode: blacklist
+  list: []
+
+max-level: 50
+# XP needed for level N -> N+1 = xp-base + xp-per-level x N
+xp-base: 100
+xp-per-level: 35
+# Multiply all XP gains (e.g. 2.0 for a double-XP weekend).
+xp-multiplier: 1.0
+# Mobs from spawners give this fraction of Hunting XP (discourages AFK farms).
+spawner-xp-fraction: 0.25
+
+# Messages.
+messages:
+  xp-action-bar: true   # "+5 Mining XP" above the hotbar
+  rare-finds: true      # chat message for rare and very rare finds
+
+# Each profession: on/off, and multipliers for its XP and its random finds.
+# A profession can also be limited with the permission professions.profession.<id> (everyone has it by default).
+professions:
+  woodcutting:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  mining:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  digging:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  farming:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  foraging:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  fishing:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  hunting:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  husbandry:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  smelting:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  enchanting:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  alchemy:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0
+  smithing:
+    enabled: true
+    xp-multiplier: 1.0
+    find-multiplier: 1.0

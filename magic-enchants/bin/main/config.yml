@@ -1,0 +1,11 @@
+# MagicEnchants - custom enchantments registered as real enchantments.
+# In-game: /enchants admin config set <key> <value>, /enchants admin toggle <feature>, /enchants admin reload.
+
+# Language of player messages: en, ro, or any lang/<code>.yml you add. Change live: /enchants admin lang <code>
+language: en
+
+# Worlds where the enchantment effects work (the enchantments stay on items everywhere).
+# mode: blacklist = every world except the list; whitelist = only the listed worlds.
+worlds:
+  mode: blacklist
+  list: []

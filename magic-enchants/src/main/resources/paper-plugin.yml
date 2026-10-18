@@ -1,0 +1,14 @@
+name: MagicEnchants
+version: '${version}'
+main: com.raresb.magicenchants.MagicEnchantsPlugin
+bootstrapper: com.raresb.magicenchants.MagicEnchantsBootstrap
+api-version: '26.3'
+description: Magic enchantments for weapons, armor, tools, tridents, maces, shields and elytra.
+author: raresb
+permissions:
+  magicenchants.menu:
+    description: Open /enchants.
+    default: true
+  magicenchants.admin:
+    description: /enchants admin (reload, config, toggle, lang, give, list).
+    default: op

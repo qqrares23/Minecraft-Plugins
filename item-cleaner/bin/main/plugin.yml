@@ -1,0 +1,15 @@
+name: ItemCleaner
+version: '${version}'
+main: com.raresb.itemcleaner.ItemCleanerPlugin
+api-version: '26.3'
+description: Clears dropped items from the ground on a timer, with chat warnings first.
+author: raresb
+commands:
+  clearitems:
+    description: Ground item cleaner - status, clear now, change interval, reload.
+    usage: "/clearitems [now|interval <minutes>|admin <reload|config|toggle|lang>]"
+    permission: itemcleaner.admin
+permissions:
+  itemcleaner.admin:
+    description: Use /clearitems.
+    default: op

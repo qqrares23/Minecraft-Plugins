@@ -1,0 +1,42 @@
+# Hud messages (MiniMessage format: https://docs.advntr.dev/minimessage/format.html).
+# Placeholders in <angle brackets> are filled in by the plugin.
+players-only: "<red>Only players can do that."
+not-online: "<red>That player isn't online."
+feature-off: "<gray>That feature is turned off on this server."
+pack-prompt: "Adds custom icons to the /skills, /paths, /professions and /enchants menus."
+
+toggle:
+  sidebar-on: "<green>Sidebar shown."
+  sidebar-off: "<gray>Sidebar hidden."
+  damage-numbers-on: "<green>Damage numbers shown."
+  damage-numbers-off: "<gray>Damage numbers hidden."
+
+sidebar:
+  target: "<red>◎ <name>"
+  target-health: "<white>  ❤ <health><gray>/<max>"
+  paths: "<yellow>⚔ Paths"
+  no-path: "<dark_gray>  no path - /paths"
+  combo: "<yellow>✦ Combo <white><bold>x<combo>"
+  cooldowns: "<yellow>⌛ Cooldowns"
+  more: "<dark_gray>  +<count> more"
+  weapon: "<yellow>⚒ <weapon> <light_purple>mastery <mastery>"
+  professions: "<yellow>⛏ Professions"
+  enchantments: "<yellow>✧ Enchantments"
+  level: "<white>  <name> <green>Lvl <level>"
+  level-max: "<white>  <name> <gold>Lvl <level>"
+
+combo:
+  finisher: "<gold><bold>✦ FINISHER x<max>!"
+  bar: "<yellow><bold>✦ Combo x<combo></bold><white>  +<bonus>% damage"
+  bar-high: "<gold><bold>✦ Combo x<combo></bold><white>  +<bonus>% damage"
+
+stats:
+  header: "<gold><bold>✦ <player> - stats"
+  line: "<gray>  <name>: <white><value>"
+  kills: "Kills"
+  kills-value: "<total> (<mobs> mobs, <players> players)"
+  deaths: "Deaths"
+  kd: "Kills per death"
+  best-combo: "Best combo"
+  finishers: "Finishers"
+  skills-used: "Skills used"

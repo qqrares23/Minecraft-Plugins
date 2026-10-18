@@ -1,0 +1,37 @@
+# Language of player messages: en, ro, or any lang/<code>.yml you add. Change live: /clearitems admin lang <code>
+language: en
+
+# Worlds this plugin works in. mode: blacklist = every world except the list; whitelist = only the list.
+worlds:
+  mode: blacklist
+  list: []
+
+# How often dropped items are cleared from the ground (minutes). Change live with /clearitems interval <minutes>.
+interval-minutes: 5
+# Chat warnings this many seconds before a clear (only those shorter than the interval are used).
+warning-seconds: [60, 30, 10]
+
+# Items are kept (not cleared) when:
+min-age-seconds: 30               # ...they were dropped less than this long ago
+protect-death-drops-minutes: 5    # ...they lie near where a player died in the last N minutes
+death-drop-radius: 6              #    (blocks)
+keep-glowing: true                # ...they glow (rare drops from MightyMobs and Professions)
+keep-named: true                  # ...they were renamed on an anvil
+keep-materials:                   # ...they are one of these
+  - NETHERITE_INGOT
+  - NETHERITE_SCRAP
+  - ANCIENT_DEBRIS
+  - NETHER_STAR
+  - ELYTRA
+  - TOTEM_OF_UNDYING
+  - ENCHANTED_GOLDEN_APPLE
+  - HEART_OF_THE_SEA
+  - DRAGON_EGG
+  - BEACON
+  - SHULKER_BOX       # every colour of shulker box is kept too
+
+# Chat messages and sounds.
+messages:
+  warnings: true    # countdown warnings before a clear
+  result: true      # "Cleared N items" after a clear
+  sound: true       # ping in the last 10 seconds

@@ -1,0 +1,45 @@
+name: Hud
+version: '${version}'
+main: com.raresb.hud.HudPlugin
+api-version: '26.3'
+description: Sidebar (paths, combo, cooldowns), floating damage numbers, /stats and the server resource pack.
+author: raresb
+softdepend: [Paths, WeaponSkills]
+commands:
+  sidebar:
+    description: Show or hide the sidebar.
+    usage: /sidebar
+    permission: hud.sidebar
+  damagenumbers:
+    description: Show or hide floating damage numbers.
+    usage: /damagenumbers
+    aliases: [dmgnumbers]
+    permission: hud.damagenumbers
+  stats:
+    description: Show your (or another online player's) stats.
+    usage: "/stats [player]"
+    permission: hud.stats
+  hud:
+    description: Hud settings, language and resource pack.
+    usage: "/hud reload | config <get|set|reset|list> | toggle <feature> | lang <code> | pack <status|url|on|off|reload>"
+    permission: hud.admin
+permissions:
+  hud.use:
+    description: Use the sidebar, damage numbers and /stats.
+    default: true
+    children:
+      hud.sidebar: true
+      hud.damagenumbers: true
+      hud.stats: true
+  hud.sidebar:
+    description: See the sidebar and use /sidebar.
+    default: true
+  hud.damagenumbers:
+    description: See damage numbers and use /damagenumbers.
+    default: true
+  hud.stats:
+    description: Use /stats.
+    default: true
+  hud.admin:
+    description: /hud reload, config, toggle, lang and pack.
+    default: op

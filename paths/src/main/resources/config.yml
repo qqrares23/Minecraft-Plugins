@@ -1,0 +1,87 @@
+# Paths - pick two; each gives an on-hit passive, an always-on passive and a right-click skill.
+# In-game: /paths admin config set <key> <value>, /paths admin toggle <feature>, /paths admin reload.
+
+# Language of player messages: en, ro, or any lang/<code>.yml you add. Change live: /paths admin lang <code>
+language: en
+
+# Worlds where paths work (picked paths do nothing elsewhere).
+# mode: blacklist = every world except the list; whitelist = only the listed worlds.
+worlds:
+  mode: blacklist
+  list: []
+
+# How many paths a player can have active at once.
+max-active-paths: 2
+# Abilities and talents can only be changed this many seconds after the last hit dealt or taken.
+combat-lock-seconds: 10
+
+max-level: 50
+# Levels above this can be earned but don't make the path stronger yet.
+bonus-cap-level: 20
+# XP needed for level N -> N+1 = xp-base + xp-per-level x N
+xp-base: 40
+xp-per-level: 20
+xp-multiplier: 1.0
+# Minutes before you can drop a path again after changing (progress is always kept).
+switch-cooldown-minutes: 60
+
+# Show the highest-level active path before the name in chat: "[Warbringer 15] Rares: hi".
+chat-titles: true
+
+# Talents: false = can't be picked and does nothing.
+talents:
+  hit_power: true
+  lifesteal: true
+  skill_power: true
+  skill_haste: true
+  passive_power: true
+  swift: true
+  guard: true
+  might: true
+  kill_reset: true
+  endurance: true
+  focus: true
+  fervor: true
+  second_wind: true
+  legend: true
+  unyielding: true
+
+# Each path: on/off and an XP multiplier. A path can also be limited with the permission
+# paths.path.<id> (everyone has it by default). A path that is turned off stops working and frees its slot.
+paths:
+  duelist:
+    enabled: true
+    xp-multiplier: 1.0
+  warbringer:
+    enabled: true
+    xp-multiplier: 1.0
+  ranger:
+    enabled: true
+    xp-multiplier: 1.0
+  arbalist:
+    enabled: true
+    xp-multiplier: 1.0
+  tidecaller:
+    enabled: true
+    xp-multiplier: 1.0
+  juggernaut:
+    enabled: true
+    xp-multiplier: 1.0
+  sentinel:
+    enabled: true
+    xp-multiplier: 1.0
+  shadow:
+    enabled: true
+    xp-multiplier: 1.0
+  beastmaster:
+    enabled: true
+    xp-multiplier: 1.0
+  pyromancer:
+    enabled: true
+    xp-multiplier: 1.0
+  frost_warden:
+    enabled: true
+    xp-multiplier: 1.0
+  lancer:
+    enabled: true
+    xp-multiplier: 1.0
